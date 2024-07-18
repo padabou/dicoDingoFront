@@ -13,13 +13,13 @@ async function sharedMetaData(params) {
       default:
         settings?.title ||
         "EQUIDICO, le blog qui dit tout sur les chevaux",
-      template: "%s | EQUIDICO"
+      template: "%s | EQUIDICO, le blog qui dit tout sur les chevaux"
     },
     description:
       settings?.description ||
       "On vous renseigne, on vous enseigne, on vous informe !",
     keywords: ["Equitation", "Monde équestre", "Cheval"],
-    authors: [{ name: "Surjith" }],
+    authors: [{ name: "P4d4b@u" }],
     alternates: {
       canonical: '/'
     },
@@ -35,7 +35,7 @@ async function sharedMetaData(params) {
       ]
     },
     twitter: {
-      title: settings?.title || "Stablo Template",
+      title: settings?.title || "EQUI Dico",
       card: "summary_large_image"
     },
     robots: {

@@ -2,7 +2,6 @@ import CategoryPage from "./category";
 import {getAllArticlesByType, getArticleBySlugAndType} from "@/lib/article/client";
 
 export async function generateMetadata({ params }) {
-  const post = await getArticleBySlugAndType(params.slug, params.category.toUpperCase().replace("-", "_"));
 
   return {
     title: params.category.toUpperCase().replace("-", " "),

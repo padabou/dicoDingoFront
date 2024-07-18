@@ -49,11 +49,7 @@ export default function Layout(props) {
           props?.fontStyle,
           "antialiased text-gray-800 dark:bg-black dark:text-gray-400"
         )}>
-        {props.alternate ? (
-          <NavbarAlt {...props} />
-        ) : (
           <Navbar {...props} />
-        )}
 
         <div>{children}</div>
 
