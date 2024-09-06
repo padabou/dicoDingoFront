@@ -1,11 +1,9 @@
-import { getSettings } from "@/lib/sanity/client";
 import Footer from "@/components/footer";
-import { urlForImage } from "@/lib/sanity/image";
 import Navbar from "@/components/navbar";
 import Searchbar from "@/components/searchbar";
 
 async function sharedMetaData(params) {
-  const settings = await getSettings();
+  const settings = [];//await getSettings();
   return {
     // enable this for resolving opengraph image
     metadataBase: new URL(process.env.NEXT_PUBLIC_URL),
@@ -27,7 +25,6 @@ async function sharedMetaData(params) {
       images: [
         {
           url:
-            urlForImage(settings?.openGraphImage)?.src ||
             "/img/opengraph.jpg",
           width: 800,
           height: 600
@@ -50,7 +47,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Layout({ children, params }) {
-  const settings = await getSettings();
+  const settings = [];//await getSettings();
   return (
     <>
       <Navbar {...settings} />
