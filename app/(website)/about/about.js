@@ -7,13 +7,13 @@ export default function About({ authors, settings }) {
   return (
     <Container>
       <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
-        About
+        A propos de nous ...
       </h1>
       <div className="text-center">
         <p className="text-lg">Bienvenue sur notre site dédié à l&apos;équitation !</p>
       </div>
-
-      <div className="mb-16 mt-6 grid grid-cols-3 gap-5 md:mb-32 md:mt-16 md:gap-16">
+      {authors &&
+        <div className="mb-16 mt-6 grid grid-cols-3 gap-5 md:mb-32 md:mt-16 md:gap-16">
         {authors.slice(0, 3).map(author => {
           const imageProps = urlForImage(author?.image) || null;
           return (
@@ -35,7 +35,7 @@ export default function About({ authors, settings }) {
           );
         })}
       </div>
-
+      }
       <div className="prose mx-auto mt-14 text-center dark:prose-invert">
         <p>
             Nous sommes une équipe de passionnés qui partage une profonde admiration pour cet art noble qu&apos;est l&apos;équitation. Depuis des années, nous vivons et respirons ce sport, et notre mission est de transmettre cette passion à travers une plateforme unique où chaque cavalier, amateur ou confirmé, peut trouver tout ce dont il a besoin.
