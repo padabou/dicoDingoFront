@@ -12,7 +12,7 @@ export default function About({ authors, settings }) {
       <div className="text-center">
         <p className="text-lg">Bienvenue sur notre site dédié à l&apos;équitation !</p>
       </div>
-      {authors &&
+      {(authors && authors.length > 0) &&
         <div className="mb-16 mt-6 grid grid-cols-3 gap-5 md:mb-32 md:mt-16 md:gap-16">
         {authors.slice(0, 3).map(author => {
           const imageProps = urlForImage(author?.image) || null;
