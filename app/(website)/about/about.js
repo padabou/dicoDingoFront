@@ -10,7 +10,7 @@ export default function About({ authors, settings }) {
         About
       </h1>
       <div className="text-center">
-        <p className="text-lg">We are a small passionate team.</p>
+        <p className="text-lg">Bienvenue sur notre site dédié à l'équitation !</p>
       </div>
 
       <div className="mb-16 mt-6 grid grid-cols-3 gap-5 md:mb-32 md:mt-16 md:gap-16">
@@ -38,18 +38,19 @@ export default function About({ authors, settings }) {
 
       <div className="prose mx-auto mt-14 text-center dark:prose-invert">
         <p>
-          We provide real-time connectivity to enable software
-          providers and financial institutions to build integrated
-          products for their small business customers.
+            Nous sommes une équipe de passionnés qui partage une profonde admiration pour cet art noble qu'est l'équitation. Depuis des années, nous vivons et respirons ce sport, et notre mission est de transmettre cette passion à travers une plateforme unique où chaque cavalier, amateur ou confirmé, peut trouver tout ce dont il a besoin.
         </p>
         <p>
-          Our API infrastructure is leveraged by clients ranging from
-          lenders to corporate card providers and business forecasting
-          tools, with use cases including automatic reconciliation,
-          business dashboarding, and loan decisioning.
+            Notre site est né d'une envie simple : centraliser en un seul lieu toutes les informations essentielles liées à l'équitation. Que vous cherchiez des conseils pour débuter, des techniques avancées, des soins pour vos chevaux, ou les dernières tendances en matière d'équipements, nous avons rassemblé pour vous une mine de connaissances. Notre but est de rendre ces informations accessibles à tous, afin que vous puissiez vivre pleinement votre passion, en ayant tout à portée de main.
         </p>
         <p>
-          <Link href="/contact">Get in touch</Link>
+          Nous espérons que notre site deviendra votre ressource incontournable dans le monde de l'équitation, et que vous trouverez ici l'inspiration et les conseils pour évoluer dans cette merveilleuse discipline.
+        </p>
+        <p>
+          L'équipe Equidico !!
+        </p>
+        <p>
+          <Link href="/contact">On reste en contact</Link>
         </p>
       </div>
     </Container>
