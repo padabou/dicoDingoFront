@@ -15,12 +15,12 @@ export default function PostList({
   fontSize,
   fontWeight
 }) {
-  const imageProps = article?.mainImage
-    ? urlForImage(article.mainImage)
-    : null;
+  const imageSrc = article?.picture
+    ? article?.picture
+    : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
   const AuthorimageProps = article?.author?.image
     ? urlForImage(article.author.image)
-    : null;
+    : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
   const articleHref = `/article/${article.type ? `${article.type.toLowerCase().replace("_", "-")}/` : ""}${article.slug}`;
   return (
     <>
@@ -43,14 +43,10 @@ export default function PostList({
                 : "aspect-square"
             )}
             href={articleHref}>
-            {imageProps ? (
+            {imageSrc ? (
               <Image
-                src={imageProps.src}
-                {...(article.mainImage.blurDataURL && {
-                  placeholder: "blur",
-                  blurDataURL: article.mainImage.blurDataURL
-                })}
-                alt={article.mainImage.alt || "Thumbnail"}
+                src={imageSrc}
+                alt={article.title || "Thumbnail"}
                 priority={preloadImage ? true : false}
                 className="object-cover transition-all"
                 fill
