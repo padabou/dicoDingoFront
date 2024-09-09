@@ -38,13 +38,13 @@ export default function About({ authors, settings }) {
 
       <div className="prose mx-auto mt-14 text-center dark:prose-invert">
         <p>
-            Nous sommes une équipe de passionnés qui partage une profonde admiration pour cet art noble qu'est l'équitation. Depuis des années, nous vivons et respirons ce sport, et notre mission est de transmettre cette passion à travers une plateforme unique où chaque cavalier, amateur ou confirmé, peut trouver tout ce dont il a besoin.
+            Nous sommes une équipe de passionnés qui partage une profonde admiration pour cet art noble qu&apos;est l&apos;équitation. Depuis des années, nous vivons et respirons ce sport, et notre mission est de transmettre cette passion à travers une plateforme unique où chaque cavalier, amateur ou confirmé, peut trouver tout ce dont il a besoin.
         </p>
         <p>
-            Notre site est né d'une envie simple : centraliser en un seul lieu toutes les informations essentielles liées à l'équitation. Que vous cherchiez des conseils pour débuter, des techniques avancées, des soins pour vos chevaux, ou les dernières tendances en matière d'équipements, nous avons rassemblé pour vous une mine de connaissances. Notre but est de rendre ces informations accessibles à tous, afin que vous puissiez vivre pleinement votre passion, en ayant tout à portée de main.
+            Notre site est né d&apos;une envie simple : centraliser en un seul lieu toutes les informations essentielles liées à l'équitation. Que vous cherchiez des conseils pour débuter, des techniques avancées, des soins pour vos chevaux, ou les dernières tendances en matière d'équipements, nous avons rassemblé pour vous une mine de connaissances. Notre but est de rendre ces informations accessibles à tous, afin que vous puissiez vivre pleinement votre passion, en ayant tout à portée de main.
         </p>
         <p>
-          Nous espérons que notre site deviendra votre ressource incontournable dans le monde de l'équitation, et que vous trouverez ici l'inspiration et les conseils pour évoluer dans cette merveilleuse discipline.
+          Nous espérons que notre site deviendra votre ressource incontournable dans le monde de l&apos;équitation, et que vous trouverez ici l&apos;inspiration et les conseils pour évoluer dans cette merveilleuse discipline.
         </p>
         <p>
           L'équipe Equidico !!
