@@ -16,7 +16,7 @@ export default function PostList({
   fontWeight
 }) {
   const imageSrc = article?.picture
-    ? `${process.env.NEXT_PUBLIC_PICTURE_PATH}article?.picture`
+    ? article?.picture
     : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
   const AuthorimageProps = article?.author?.image
     ? urlForImage(article.author.image)
