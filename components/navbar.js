@@ -17,8 +17,8 @@ export default function Navbar(props) {
       href: "/"
     },
     {
-      label: "Couleur",
-      href: "/article/couleur"
+      label: "Robe",
+      href: "/article/robe"
     },
     {
       label: "Discipline",
