@@ -130,7 +130,7 @@ export default function PostList({
                 dateTime={article?.publishedAt || article.createdAt}>
                 {format(
                   parseISO(article?.publishedAt || article.createdAt),
-                  "MMMM dd, yyyy"
+                    "dd/MM/yyyy"
                 )}
               </time>
             </div>

@@ -81,7 +81,7 @@ export default function Featured({ post, pathPrefix }) {
                         parseISO(
                           post?.publishedAt || post._createdAt
                         ),
-                        "MMMM dd, yyyy"
+                          "dd/MM/yyyy"
                       )}
                     </time>
                     <span className="text-white">

@@ -66,7 +66,7 @@ export default function PostAlt({
               dateTime={post?.publishedAt || post._createdAt}>
               {format(
                 parseISO(post?.publishedAt || post._createdAt),
-                "MMMM dd, yyyy"
+                  "dd/MM/yyyy"
               )}
             </time>
           </div>
