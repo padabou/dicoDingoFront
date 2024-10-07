@@ -13,26 +13,19 @@ export default function Post({ data }) {
                 Pour tout savoir sur les chevaux !!
             </h2>
             <p className={'mt-5'}>
-                Découvrez l'univers fascinant de l&apos;équitation et des chevaux à travers nos articles de blog, pensés pour
-                les cavaliers de tous niveaux et les passionnés du monde équestre. Que vous soyez débutant, cavalier
-                confirmé ou simplement curieux d’en savoir plus, notre mission est de vous offrir un espace où la
-                connaissance rencontre la passion.
+                Découvrez l&apos;univers fascinant de l&apos;équitation et des chevaux à travers nos articles de blog, pensés pour les cavaliers de tous niveaux et les passionnés du monde équestre. Que vous soyez débutant, cavalier confirmé ou simplement curieux d’en savoir plus, notre mission est de vous offrir un espace où la connaissance rencontre la passion.
             </p>
             <p className={'mt-5'}>
-                🌟 Articles pratiques : Astuces pour améliorer votre technique, choisir votre équipement, et prendre soin
-                de votre monture.
+                🌟 Articles pratiques : Astuces pour améliorer votre technique, choisir votre équipement, et prendre soin de votre monture.
             </p>
             <p className={'mt-5'}>
-                🐎 Portraits de chevaux : Explorez les différentes races, robes, tempéraments, et découvrez des anecdotes
-                sur ces majestueux animaux.
+                🐎 Portraits de chevaux : Explorez les différentes races, robes, tempéraments, et découvrez des anecdotes sur ces majestueux animaux.
             </p>
             <p className={'mt-5'}>
-                🔎 Focus sur l'éthologie : Comprendre le comportement du cheval et tisser un lien profond avec votre
-                compagnon.
+                🔎 Focus sur l&apos;éthologie : Comprendre le comportement du cheval et tisser un lien profond avec votre compagnon.
             </p>
             <p className={'mt-5'}>
-                📚 Éducation continue : Des conseils, des guides, et des témoignages pour vous accompagner dans votre
-                pratique équestre.
+                📚 Éducation continue : Des conseils, des guides, et des témoignages pour vous accompagner dans votre pratique équestre.
             </p>
             <p className={'mt-5'}>
                 🚧 Equidico débute, le contenu va évoluer en continu, si vous ne trouvez pas ce que vous cherchez, cela ne devrait pas tarder.
