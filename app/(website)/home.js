@@ -13,7 +13,7 @@ export default function Post({ data }) {
                 Pour tout savoir sur les chevaux !!
             </h2>
             <p className={'mt-5'}>
-                Découvrez l'univers fascinant de l'équitation et des chevaux à travers nos articles de blog, pensés pour
+                Découvrez l'univers fascinant de l&apos;équitation et des chevaux à travers nos articles de blog, pensés pour
                 les cavaliers de tous niveaux et les passionnés du monde équestre. Que vous soyez débutant, cavalier
                 confirmé ou simplement curieux d’en savoir plus, notre mission est de vous offrir un espace où la
                 connaissance rencontre la passion.
