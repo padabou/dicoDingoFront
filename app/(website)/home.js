@@ -31,7 +31,7 @@ export default function Post({ data }) {
                 🚧 Equidico débute, le contenu va évoluer en continu, si vous ne trouvez pas ce que vous cherchez, cela ne devrait pas tarder.
             </p>
             <p className={'mt-5 text-custom-grey'}>
-                📸 Tu veux nous aider ? Tu veux qu'on ajoute une page informative sur ton équin ou ton matériel ? Envoie nous une photo et une petite description, on se charge du reste, on te crédite dans la page et on te prévient quand c'est en ligne !
+                📸 Tu veux nous aider ? Tu veux qu&apos;on ajoute une page informative sur ton équin ou ton matériel ? Envoie nous une photo et une petite description, on se charge du reste, on te crédite dans la page et on te prévient quand c&apos;est en ligne !
                 <Link className={'mt-5 text-custom-red'} href={`contribution`}> ✍️Contribuer</Link>
             </p>
         </Container>
