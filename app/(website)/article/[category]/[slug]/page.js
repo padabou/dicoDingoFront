@@ -6,7 +6,7 @@ export async function generateMetadata({ params }) {
   const post = await getArticleBySlugAndType(params.slug, params.category.toUpperCase().replace("-", "_"));
 
   return {
-            title: post.title,
+            title: post.metaTitle,
             description: post?.metaDescription ? post?.metaDescription : '' + ' ' + params.category,
             alternates: {
                 canonical: '/article/' + params.category + '/' + params.slug

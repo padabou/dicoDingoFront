@@ -51,8 +51,8 @@ export default function Navbar(props) {
       href: "/article/race"
     },
     {
-      label: "About",
-      href: "/about"
+      label: "Contribuer",
+      href: "/contribution"
     },
     {
       label: "Contact",
@@ -63,7 +63,7 @@ export default function Navbar(props) {
   const mobilemenu = [...leftmenu, ...rightmenu];
 
   return (
-      <Container>
+      <Container className="bg-custom-blue text-white-50">
         <nav>
           <Disclosure>
             {({open}) => (
@@ -78,12 +78,13 @@ export default function Navbar(props) {
                                     menu={item}
                                     key={`${item.label}${index}`}
                                     items={item.children}
+                                    className="text-white"
                                 />
                             ) : (
                                 <Link
                                     href={item.href}
                                     key={`${item.label}${index}`}
-                                    className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                                    className="px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
                                     target={item.external ? "_blank" : ""}
                                     rel={item.external ? "noopener" : ""}>
                                   {item.label}
@@ -102,7 +103,7 @@ export default function Navbar(props) {
                                 sizes="(max-width: 640px) 100vw, 200px"
                             />
                         ) : (
-                            <span className="block text-center">
+                            <span className="block text-center text-white">
                         EQUI DICO
                       </span>
                         )}
@@ -123,7 +124,7 @@ export default function Navbar(props) {
                       </Link>
                       <Disclosure.Button
                           aria-label="Toggle Menu"
-                          className="ml-auto rounded-md px-2 py-1 text-gray-500 focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
+                          className="ml-auto rounded-md px-2 py-1 text-white focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
                         <svg
                             className="h-6 w-6 fill-current"
                             xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +160,7 @@ export default function Navbar(props) {
                                 <Link
                                     href={item.href}
                                     key={`${item.label}${index}`}
-                                    className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                                    className="px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
                                     target={item.external ? "_blank" : ""}
                                     rel={item.external ? "noopener" : ""}>
                                   <span> {item.label}</span>
@@ -190,7 +191,7 @@ export default function Navbar(props) {
                                 <Link
                                     href={item.href}
                                     key={`${item.label}${index}`}
-                                    className="w-full px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                                    className="w-full px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
                                     target={item.external ? "_blank" : ""}
                                     rel={item.external ? "noopener" : ""}>
                                   {item.label}
@@ -219,8 +220,8 @@ const DropdownMenu = ({menu, items, mobile}) => {
                   className={cx(
                       "flex items-center gap-x-1 rounded-md px-5 py-2 text-sm font-medium  outline-none transition-all focus:outline-none focus-visible:text-indigo-500 focus-visible:ring-1 dark:focus-visible:bg-gray-800",
                       open
-                          ? "text-blue-500 hover:text-blue-500"
-                          : " text-gray-600 dark:text-gray-400 ",
+                          ? "text-blue-500 hover:text-custom-red"
+                          : " text-white dark:text-gray-400 ",
                       mobile ? "w-full px-4 py-2 " : "inline-block px-4 py-2"
                   )}>
                 <span>{menu.label}</span>
@@ -249,7 +250,7 @@ const DropdownMenu = ({menu, items, mobile}) => {
                           "flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4",
                           active
                             ? "text-blue-500"
-                            : "text-gray-700 hover:text-blue-500 focus:text-blue-500 dark:text-gray-300"
+                            : "text-custom-red hover:text-custom-blue focus:text-blue-500 dark:text-gray-300"
                         )}>
                         <span> {item.title}</span>
                       </Link>

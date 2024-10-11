@@ -80,7 +80,7 @@ export default function PostList({
               )}>
               <Link href={articleHref}>
                 <span
-                  className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
+                  className="text-custom-red hover:text-custom-sauge-green bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
       bg-no-repeat
       transition-[background-size]
       duration-500
