@@ -23,7 +23,7 @@ export default function Navbar(props) {
     {
       label: "Discipline",
       href: "/article/discipline"
-    },
+    }/*,
     {
       label: "Matériel",
       href: "/article/materiel",
@@ -37,15 +37,15 @@ export default function Navbar(props) {
           path: "/article/materiel-cavalier"
         }
       ]
-    }
+    }*/
   ];
 
   const rightmenu = [
 
-    {
+   /* {
       label: "Métier",
       href: "/article/metier"
-    },
+    },*/
     {
       label: "Race",
       href: "/article/race"
