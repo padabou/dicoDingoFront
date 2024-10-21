@@ -34,7 +34,7 @@ export default function Post(props) {
           </div>
 
           <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
-            {post.title}
+            {post.h1Title}
           </h1>
 
           <div className="mt-3 flex justify-center space-x-3 text-gray-500 ">
