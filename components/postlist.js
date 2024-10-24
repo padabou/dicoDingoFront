@@ -102,30 +102,30 @@ export default function PostList({
                 </p>
               )}
             </div>
-
             <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
-              <Link href={`/author/${article?.author?.slug?.current}`}>
-                <div className="flex items-center gap-3">
-                  <div className="relative h-5 w-5 flex-shrink-0">
-                    {article?.author?.image && (
-                      <Image
-                        src={AuthorimageProps.src}
-                        alt={article?.author?.name}
-                        className="rounded-full object-cover"
-                        fill
-                        sizes="20px"
-                      />
-                    )}
+              { article?.author &&
+                <Link href={`/author/${article?.author?.slug?.current}`}>
+                  <div className="flex items-center gap-3">
+                    <div className="relative h-5 w-5 flex-shrink-0">
+                      {article?.author?.image && (
+                        <Image
+                          src={AuthorimageProps.src}
+                          alt={article?.author?.name}
+                          className="rounded-full object-cover"
+                          fill
+                          sizes="20px"
+                        />
+                      )}
+                    </div>
+                    <span className="truncate text-sm">
+                      {article?.author?.name}
+                    </span>
                   </div>
-                  <span className="truncate text-sm">
-                    {article?.author?.name}
-                  </span>
-                </div>
-              </Link>
-              <span className="text-xs text-gray-300 dark:text-gray-600">
-                &bull;
-              </span>
-              <time
+                </Link>
+              }
+
+              {(article?.publishedAt  || article.createdAt) &&
+                  <time
                 className="truncate text-sm"
                 dateTime={article?.publishedAt || article.createdAt}>
                 {format(
@@ -133,6 +133,7 @@ export default function PostList({
                     "dd/MM/yyyy"
                 )}
               </time>
+              }
             </div>
           </div>
         </div>
