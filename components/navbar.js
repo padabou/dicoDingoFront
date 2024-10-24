@@ -17,27 +17,27 @@ export default function Navbar(props) {
       href: "/"
     },
     {
-      label: "Robe",
-      href: "/article/robe"
+      label: "Le cheval",
+      href: "/article/robe",
+      children: [
+        {
+          title: "Les Robes",
+          path: "/article/robe"
+        },
+        {
+          title: "Les Races",
+          path: "/article/race"
+        },
+        {
+          title: "Le matériel",
+          path: "/article/materiel-cheval"
+        }
+      ]
     },
     {
       label: "Discipline",
       href: "/article/discipline"
-    }/*,
-    {
-      label: "Matériel",
-      href: "/article/materiel",
-      children: [
-        {
-          title: "Cheval",
-          path: "/article/materiel-cheval"
-        },
-        {
-          title: "Cavalier",
-          path: "/article/materiel-cavalier"
-        }
-      ]
-    }*/
+    }
   ];
 
   const rightmenu = [
@@ -47,8 +47,8 @@ export default function Navbar(props) {
       href: "/article/metier"
     },*/
     {
-      label: "Race",
-      href: "/article/race"
+      label: "Le Blog",
+      href: "/article/blog"
     },
     {
       label: "Contribuer",
