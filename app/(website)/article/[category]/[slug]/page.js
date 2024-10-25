@@ -21,7 +21,7 @@ export default async function PostDefault({ params }) {
 
     const jsonLd = [{
         '@context': 'https://schema.org',
-        '@type': 'Product',
+        '@type': 'BreadcrumbList',
         'itemListElement' : [
             {
                 "@type": "ListItem",
