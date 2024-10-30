@@ -18,9 +18,9 @@ export default function Post(props) {
     notFound();
   }
 
-  const imageProps = post?.mainImage
-    ? urlForImage(post?.mainImage)
-    : null;
+  const imageProps = post?.picture
+      ? post?.picture
+      : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
 
   const AuthorimageProps = post?.author?.image
     ? urlForImage(post.author.image)
@@ -70,19 +70,9 @@ export default function Post(props) {
         </div>
       </Container>
 
-      {imageProps && (
-      <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
-          <Image
-            src={imageProps.src}
-            alt={post.mainImage?.alt || "Thumbnail"}
-            loading="eager"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-      </div>
-      )}
+
       <Container>
+
         <article className="mx-auto max-w-screen-md ">
           {post?.intro && (
               <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
@@ -90,6 +80,18 @@ export default function Post(props) {
               </div>
           )}
           <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
+            {imageProps && (
+                <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
+                  <Image
+                      src={imageProps}
+                      alt={post?.pictureAlt || "Thumbnail"}
+                      loading="eager"
+                      fill
+                      sizes="100vw"
+                      className="object-cover"
+                  />
+                </div>
+            )}
             {post.content?.map(
                 ({
                    title,
