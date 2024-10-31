@@ -185,11 +185,18 @@ export default function Post(props) {
                     </div>
                 )
             )}
-            <div>
-              <p>
-                {post.conclusion && ReactHtmlParser(post.conclusion)}
-              </p>
-            </div>
+
+              {post?.conclusion && (
+                  <div>
+                    <h2>
+                      Conclusion
+                    </h2>
+                    <p>
+                      {ReactHtmlParser(post.conclusion)}
+                    </p>
+                  </div>
+              )}
+
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link
