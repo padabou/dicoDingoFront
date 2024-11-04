@@ -49,10 +49,7 @@ export default async function PostDefault({ params }) {
             }
         ]
     }];
-    console.log("toto");
     setBreadcrumb(jsonLd[0].itemListElement);
-    console.log(getBreadcrumb());
-
    return (
         <section>
             {/* Add JSON-LD to your page */}

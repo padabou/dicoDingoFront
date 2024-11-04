@@ -1,8 +1,7 @@
 import Container from "@/components/container";
 
 import { getBreadcrumb } from "@/components/serverContext";
-export default function Breadcrumb(props) {
-console.log(getBreadcrumb());
+export default function Breadcrumb(params) {
     return (
       <Container>
         <nav className="flex" aria-label="Breadcrumb">
