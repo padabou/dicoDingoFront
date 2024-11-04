@@ -1,6 +1,7 @@
 import PostPage from "./default";
 
 import {getArticleBySlugAndType} from "@/lib/article/client";
+import {getBreadcrumb, setBreadcrumb} from "@/components/serverContext";
 
 export async function generateMetadata({ params }) {
   const post = await getArticleBySlugAndType(params.slug, params.category.toUpperCase().replace("-", "_"));
@@ -13,7 +14,6 @@ export async function generateMetadata({ params }) {
             },
         };
 }
-
 
 export default async function PostDefault({ params }) {
 
@@ -32,7 +32,7 @@ export default async function PostDefault({ params }) {
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Article",
+                "name": "Articles",
                 "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}`
             },
             {
@@ -49,6 +49,10 @@ export default async function PostDefault({ params }) {
             }
         ]
     }];
+    console.log("toto");
+    setBreadcrumb(jsonLd[0].itemListElement);
+    console.log(getBreadcrumb());
+
    return (
         <section>
             {/* Add JSON-LD to your page */}

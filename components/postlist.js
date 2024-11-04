@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { cx } from "@/utils/all";
 import { urlForImage } from "@/lib/sanity/image";
 import { parseISO, format } from "date-fns";
@@ -33,7 +32,7 @@ export default function PostList({
           className={cx(
             " overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800"
           )}>
-          <Link
+          <a
             className={cx(
               "relative block",
               aspect === "landscape"
@@ -57,7 +56,7 @@ export default function PostList({
                 <PhotoIcon />
               </span>
             )}
-          </Link>
+          </a>
         </div>
 
         <div className={cx(minimal && "flex items-center")}>
@@ -78,7 +77,7 @@ export default function PostList({
                   : "font-semibold leading-snug tracking-tight",
                 "mt-2    dark:text-white"
               )}>
-              <Link href={articleHref}>
+              <a href={articleHref}>
                 <span
                   className="text-custom-red hover:text-custom-sauge-green bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
       bg-no-repeat
@@ -89,22 +88,22 @@ export default function PostList({
       dark:from-purple-800 dark:to-purple-900">
                   {article.title}
                 </span>
-              </Link>
+              </a>
             </h2>
 
             <div className="hidden">
               {article.excerpt && (
                 <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
-                  <Link
+                  <a
                     href={articleHref}>
                     {article.excerpt}
-                  </Link>
+                  </a>
                 </p>
               )}
             </div>
             <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
               { article?.author &&
-                <Link href={`/author/${article?.author?.slug?.current}`}>
+                <a href={`/author/${article?.author?.slug?.current}`}>
                   <div className="flex items-center gap-3">
                     <div className="relative h-5 w-5 flex-shrink-0">
                       {article?.author?.image && (
@@ -121,7 +120,7 @@ export default function PostList({
                       {article?.author?.name}
                     </span>
                   </div>
-                </Link>
+                </a>
               }
 
               {(article?.publishedAt  || article.createdAt) &&

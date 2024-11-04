@@ -3,7 +3,6 @@
 import { Fragment } from "react";
 import { Menu, Transition, Disclosure } from "@headlessui/react";
 import Container from "@/components/container";
-import Link from "next/link";
 import Image from "next/image";
 import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
@@ -81,20 +80,20 @@ export default function Navbar(props) {
                                     className="text-white"
                                 />
                             ) : (
-                                <Link
+                                <a
                                     href={item.href}
                                     key={`${item.label}${index}`}
                                     className="px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
                                     target={item.external ? "_blank" : ""}
                                     rel={item.external ? "noopener" : ""}>
                                   {item.label}
-                                </Link>
+                                </a>
                             )}
                           </Fragment>
                       ))}
                     </div>
                     <div className="flex w-full items-center justify-between md:w-auto">
-                      <Link href="/" className="w-28 dark:hidden">
+                      <a href="/" className="w-28 dark:hidden">
                         {props.logo ? (
                             <Image
                                 {...urlForImage(props.logo)}
@@ -107,8 +106,8 @@ export default function Navbar(props) {
                         EQUI DICO
                       </span>
                         )}
-                      </Link>
-                      <Link href="/" className="hidden w-28 dark:block">
+                      </a>
+                      <a href="/" className="hidden w-28 dark:block">
                         {props.logoalt ? (
                             <Image
                                 {...urlForImage(props.logoalt)}
@@ -121,7 +120,7 @@ export default function Navbar(props) {
                         EQUI Dico
                       </span>
                         )}
-                      </Link>
+                      </a>
                       <Disclosure.Button
                           aria-label="Toggle Menu"
                           className="ml-auto rounded-md px-2 py-1 text-white focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
@@ -157,7 +156,7 @@ export default function Navbar(props) {
                                     items={item.children}
                                 />
                             ) : (
-                                <Link
+                                <a
                                     href={item.href}
                                     key={`${item.label}${index}`}
                                     className="px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
@@ -170,7 +169,7 @@ export default function Navbar(props) {
                               {item.badge}
                             </span>
                                   )}
-                                </Link>
+                                </a>
                             )}
                           </Fragment>
                       ))}
@@ -188,14 +187,14 @@ export default function Navbar(props) {
                                     mobile={true}
                                 />
                             ) : (
-                                <Link
+                                <a
                                     href={item.href}
                                     key={`${item.label}${index}`}
                                     className="w-full px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
                                     target={item.external ? "_blank" : ""}
                                     rel={item.external ? "noopener" : ""}>
                                   {item.label}
-                                </Link>
+                                </a>
                             )}
                           </Fragment>
                       ))}
@@ -244,7 +243,7 @@ const DropdownMenu = ({menu, items, mobile}) => {
                 {items.map((item, index) => (
                   <Menu.Item as="div" key={`${item.title}${index}`}>
                     {({ active }) => (
-                      <Link
+                      <a
                         href={item?.path ? item.path : "#"}
                         className={cx(
                           "flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4",
@@ -253,7 +252,7 @@ const DropdownMenu = ({menu, items, mobile}) => {
                             : "text-custom-red hover:text-custom-blue focus:text-blue-500 dark:text-gray-300"
                         )}>
                         <span> {item.title}</span>
-                      </Link>
+                      </a>
                     )}
                   </Menu.Item>
                 ))}

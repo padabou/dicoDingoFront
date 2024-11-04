@@ -199,11 +199,11 @@ export default function Post(props) {
 
           </div>
           <div className="mb-7 mt-7 flex justify-center">
-            <Link
+            <a
               href="/"
               className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600 dark:text-blue-500 ">
               ← Page d&apos;accueil
-            </Link>
+            </a>
           </div>
           {post.author && <AuthorCard author={post.author} />}
         </article>

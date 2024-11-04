@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Container from "@/components/container";
 import PostList from "@/components/postlist";
 
@@ -32,7 +31,7 @@ export default function Post({ data }) {
             </p>
             <p className={'mt-5 text-custom-grey'}>
                 📸 Tu veux nous aider ? Tu veux qu&apos;on ajoute une page informative sur ton équin ou ton matériel ? Envoie nous une photo et une petite description, on se charge du reste, on te crédite dans la page et on te prévient quand c&apos;est en ligne !
-                <Link className={'mt-5 text-custom-red'} href={`contribution`}> ✍️Contribuer</Link>
+                <a className={'mt-5 text-custom-red'} href={`contribution`}> ✍️Contribuer</a>
             </p>
         </Container>
         {data && (
@@ -61,11 +60,11 @@ export default function Post({ data }) {
                     ))}
                 </div>
                 <div className="mt-10 flex justify-center">
-                    <Link
+                    <a
                         href="/"
                         className="relative inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 disabled:pointer-events-none disabled:opacity-40 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300">
                         <span>Page d&apos;accueil</span>
-                    </Link>
+                    </a>
                 </div>
             </Container>
             </>

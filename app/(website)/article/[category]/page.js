@@ -1,5 +1,6 @@
 import CategoryPage from "./category";
 import {getAllArticlesByType, getArticleBySlugAndType} from "@/lib/article/client";
+import {setBreadcrumb} from "@/components/serverContext";
 
 export async function generateMetadata({ params }) {
 
@@ -15,7 +16,42 @@ export async function generateMetadata({ params }) {
 
 export default async function CategoryIndex({ params }) {
   const articles = await getAllArticlesByType(null, params.category.toUpperCase().replace("-", "_"), true);
-  return <CategoryPage articles={articles}/>;
+
+  const jsonLd = [{
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement' : [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": `${process.env.NEXT_PUBLIC_URL}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": params.category.replace("-", " "),
+        "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${params.category}`
+      }
+    ]
+  }];
+  setBreadcrumb(jsonLd[0].itemListElement);
+  return (
+      <section>
+      {/* Add JSON-LD to your page */}
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+        <CategoryPage articles={articles}/>
+    </section>
+  );
 }
 
 // export const revalidate = 60;

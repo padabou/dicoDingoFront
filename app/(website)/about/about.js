@@ -50,7 +50,7 @@ export default function About({ authors, settings }) {
           L&apos;équipe Equidico !!
         </p>
         <p>
-          <Link href="/contact">On reste en contact</Link>
+          <a href="/contact">On reste en contact</a>
         </p>
       </div>
     </Container>
