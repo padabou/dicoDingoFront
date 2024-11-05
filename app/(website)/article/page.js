@@ -1,6 +1,7 @@
 import {getAllTypes} from "@/lib/type/client";
 import TypesPage from "./article";
 import {setBreadcrumb} from "@/components/serverContext";
+import Breadcrumb from "@/components/breadcrumb";
 export async function generateMetadata({ params }) {
 
   return {
@@ -41,6 +42,7 @@ export default async function Categories({ params }) {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Breadcrumb />
           <TypesPage types={types}/>
       </section>
   );

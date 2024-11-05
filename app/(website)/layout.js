@@ -1,7 +1,6 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Searchbar from "@/components/searchbar";
-import Breadcrumb from "@/components/breadcrumb";
 
 async function sharedMetaData(params) {
   const settings = [];//await getSettings();
@@ -52,7 +51,6 @@ export default async function Layout({ children, params }) {
   return (
     <>
       <Navbar {...settings} />
-      <Breadcrumb />
       <Searchbar />
 
       <div>{children}</div>

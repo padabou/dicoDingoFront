@@ -1,9 +1,10 @@
-import Container from "@/components/container";
+import ContainerHeader from "@/components/containerHeader";
 
 import { getBreadcrumb } from "@/components/serverContext";
 export default function Breadcrumb(params) {
+    const props = {alt: true}
     return (
-      <Container>
+      <ContainerHeader>
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
 
@@ -42,6 +43,6 @@ export default function Breadcrumb(params) {
           </ol>
         </nav>
 
-      </Container>
+      </ContainerHeader>
     );
 }

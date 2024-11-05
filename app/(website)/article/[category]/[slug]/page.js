@@ -2,6 +2,7 @@ import PostPage from "./default";
 
 import {getArticleBySlugAndType} from "@/lib/article/client";
 import {getBreadcrumb, setBreadcrumb} from "@/components/serverContext";
+import Breadcrumb from "@/components/breadcrumb";
 
 export async function generateMetadata({ params }) {
   const post = await getArticleBySlugAndType(params.slug, params.category.toUpperCase().replace("-", "_"));
@@ -49,7 +50,26 @@ export default async function PostDefault({ params }) {
             }
         ]
     }];
-    setBreadcrumb(jsonLd[0].itemListElement);
+    const breadcrumb = [
+            {
+                "name": "Accueil",
+                "item": `${process.env.NEXT_PUBLIC_URL}`
+            },
+            {
+                "name": "Articles",
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}`
+            },
+            {
+                "name": params.category.replace("-", " "),
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${params.category}`
+            },
+            {
+                "name": post.titleBreadcrumb,
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${params.category}/${params.slug}`
+            }
+        ]
+    ;
+    setBreadcrumb(breadcrumb);
    return (
         <section>
             {/* Add JSON-LD to your page */}
@@ -57,6 +77,7 @@ export default async function PostDefault({ params }) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <Breadcrumb />
             <PostPage post={post} />
         </section>
     );

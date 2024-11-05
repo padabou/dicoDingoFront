@@ -1,6 +1,7 @@
 import CategoryPage from "./category";
 import {getAllArticlesByType, getArticleBySlugAndType} from "@/lib/article/client";
 import {setBreadcrumb} from "@/components/serverContext";
+import Breadcrumb from "@/components/breadcrumb";
 
 export async function generateMetadata({ params }) {
 
@@ -49,6 +50,7 @@ export default async function CategoryIndex({ params }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+        <Breadcrumb />
         <CategoryPage articles={articles}/>
     </section>
   );
