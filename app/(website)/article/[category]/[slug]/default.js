@@ -130,7 +130,7 @@ export default function Post(props) {
                              subContent
                            }) => (
                               <div key={title}>
-                                {title && <h2 id={anchor}>{title}</h2>}
+                                {title && <h3 id={anchor}>{title}</h3>}
                                 <div
                                     key={`text${title}`}
                                 >
@@ -158,7 +158,7 @@ export default function Post(props) {
                                        picture_alt,
                                      }) => (
                                         <div key={title}>
-                                          {title && <h2 id={anchor}>{title}</h2>}
+                                          {title && <h4 id={anchor}>{title}</h4>}
                                           <div
                                               key={`text${title}`}
                                           >
