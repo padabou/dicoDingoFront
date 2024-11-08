@@ -2,12 +2,13 @@ import CategoryPage from "./category";
 import {getAllArticlesByType, getArticleBySlugAndType} from "@/lib/article/client";
 import {setBreadcrumb} from "@/components/serverContext";
 import Breadcrumb from "@/components/breadcrumb";
+import {getTypeWithArticle} from "@/lib/type/client";
 
 export async function generateMetadata({ params }) {
-
+  const type = await getTypeWithArticle(params.category.toUpperCase().replace("-", "_"));
   return {
-    title: params.category.toUpperCase().replace("-", " "),
-    description: "Retrouvez des articles et des infos concernant les " + params.category.replace("-", " ") + " dans le monde de l'équitation",
+    title: type?.metaTitle,
+    description: type?.metaDescription,
     alternates: {
       canonical: '/article/' + params.category
     },
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }) {
 
 
 export default async function CategoryIndex({ params }) {
-  const articles = await getAllArticlesByType(null, params.category.toUpperCase().replace("-", "_"), true);
+  const type = await getTypeWithArticle(params.category.toUpperCase().replace("-", "_"));
 
   const jsonLd = [{
     '@context': 'https://schema.org',
@@ -37,7 +38,7 @@ export default async function CategoryIndex({ params }) {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": params.category.replace("-", " "),
+        "name": type.titleBreadcrumb,
         "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${params.category}`
       }
     ]
@@ -51,7 +52,7 @@ export default async function CategoryIndex({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
         <Breadcrumb />
-        <CategoryPage articles={articles}/>
+        <CategoryPage articles={type.articles}/>
     </section>
   );
 }
