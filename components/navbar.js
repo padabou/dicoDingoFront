@@ -94,33 +94,16 @@ export default function Navbar(props) {
                     </div>
                     <div className="flex w-full items-center justify-between md:w-auto">
                       <a href="/" className="w-28 dark:hidden">
-                        {props.logo ? (
                             <Image
-                                {...urlForImage(props.logo)}
+                                src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}common/logo-equidico-512.png`}
                                 alt="Logo"
                                 priority={true}
                                 sizes="(max-width: 640px) 100vw, 200px"
+                                width={`640`}
+                                height={`480`}
                             />
-                        ) : (
-                            <span className="block text-center text-white">
-                        EQUI DICO
-                      </span>
-                        )}
                       </a>
-                      <a href="/" className="hidden w-28 dark:block">
-                        {props.logoalt ? (
-                            <Image
-                                {...urlForImage(props.logoalt)}
-                                alt="Logo"
-                                priority={true}
-                                sizes="(max-width: 640px) 100vw, 200px"
-                            />
-                        ) : (
-                            <span className="block text-center">
-                        EQUI Dico
-                      </span>
-                        )}
-                      </a>
+
                       <Disclosure.Button
                           aria-label="Toggle Menu"
                           className="ml-auto rounded-md px-2 py-1 text-white focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">

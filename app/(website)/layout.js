@@ -17,7 +17,7 @@ async function sharedMetaData(params) {
       settings?.description ||
       "On vous renseigne, on vous enseigne, on vous informe !",
     keywords: ["Equitation", "Monde équestre", "Cheval"],
-    authors: [{ name: "P4d4b@u" }],
+    authors: [{ name: "Florent de l'Hamaide" }],
     alternates: {
       canonical: '/'
     },
