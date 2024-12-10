@@ -41,6 +41,10 @@ export default function LegalMention() {
               <br />
               Image par <a href="https://pixabay.com/fr/users/camera-man-16096197/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6766555">Sergio Cerrato - Italia</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6766555">Pixabay</a>
               <br /> Photo by Wallace Silva: https://www.pexels.com/photo/bridles-on-a-wall-25461417/
+              <br />Photo by Grace Earley: https://www.pexels.com/photo/an-equestrian-jumping-a-horse-over-an-oxer-5663046/
+              <br />Photo by Hector Alicea: https://www.pexels.com/photo/men-playing-polo-10447027/
+              <br />Photo by @coldbeer: https://www.pexels.com/photo/cowgirl-on-horse-in-rodeo-19951579/
+              <br />Image par <a href="https://pixabay.com/fr/users/memorycatcher-168384/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4861086">Siggy Nowak</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4861086">Pixabay</a>
           </p>
           <p>___________________________</p>
           <p>Génération des mentions légales par Legalstart.</p>

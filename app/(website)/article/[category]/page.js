@@ -1,5 +1,4 @@
 import CategoryPage from "./category";
-import {getAllArticlesByType, getArticleBySlugAndType} from "@/lib/article/client";
 import {setBreadcrumb} from "@/components/serverContext";
 import Breadcrumb from "@/components/breadcrumb";
 import {getTypeWithArticle} from "@/lib/type/client";
@@ -16,8 +15,8 @@ export async function generateMetadata({ params }) {
 }
 
 
-export default async function CategoryIndex({ params }) {
-  const type = await getTypeWithArticle(params.category.toUpperCase().replace("-", "_"));
+export default async function CategoryIndex({ params, searchParams }) {
+  const type = await getTypeWithArticle(params.category.toUpperCase().replace("-", "_"), searchParams.page);
 
   const jsonLd = [{
     '@context': 'https://schema.org',
@@ -52,7 +51,7 @@ export default async function CategoryIndex({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
         <Breadcrumb />
-        <CategoryPage articles={type.articles}/>
+        <CategoryPage articles={type.articles} category={params.category}/>
     </section>
   );
 }
