@@ -76,7 +76,7 @@ export default function Post(props) {
         <article className="mx-auto max-w-screen-md ">
           {post?.intro && (
               <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
-                {post.intro}
+                {post.intro && ReactHtmlParser(post.intro)}
               </div>
           )}
           <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">

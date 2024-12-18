@@ -37,6 +37,8 @@ export default function LegalMention() {
           <p>
               Certaines images du site ont été générées via une IA générative.
               <br />
+              Image Designed by Freepik
+              <br />
               Image par <a href="https://pixabay.com/fr/users/danielsfotowelt-5272019/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2432565">Daniel Borker</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2432565">Pixabay</a>
               <br />
               Image par <a href="https://pixabay.com/fr/users/camera-man-16096197/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6766555">Sergio Cerrato - Italia</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6766555">Pixabay</a>
@@ -45,6 +47,7 @@ export default function LegalMention() {
               <br />Photo by Hector Alicea: https://www.pexels.com/photo/men-playing-polo-10447027/
               <br />Photo by @coldbeer: https://www.pexels.com/photo/cowgirl-on-horse-in-rodeo-19951579/
               <br />Image par <a href="https://pixabay.com/fr/users/memorycatcher-168384/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4861086">Siggy Nowak</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4861086">Pixabay</a>
+                <br />Resim <a href="https://pixabay.com/tr/users/alkemade-804941/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5673382">Ria</a> tarafından <a href="https://pixabay.com/tr//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5673382">Pixabay 'a yüklendi</a>
           </p>
           <p>___________________________</p>
           <p>Génération des mentions légales par Legalstart.</p>
