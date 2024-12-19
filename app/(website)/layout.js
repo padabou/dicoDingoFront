@@ -1,6 +1,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Searchbar from "@/components/searchbar";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 async function sharedMetaData(params) {
   const settings = [];//await getSettings();
@@ -48,8 +49,10 @@ export async function generateMetadata({ params }) {
 
 export default async function Layout({ children, params }) {
   const settings = [];//await getSettings();
+  const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID;
   return (
     <>
+      <GoogleAnalytics gaId={googleAnalyticsId}/>
       <Navbar {...settings} />
       <Searchbar />
 
