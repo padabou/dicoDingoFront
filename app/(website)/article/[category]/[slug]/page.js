@@ -5,20 +5,23 @@ import {getBreadcrumb, setBreadcrumb} from "@/components/serverContext";
 import Breadcrumb from "@/components/breadcrumb";
 
 export async function generateMetadata({ params }) {
-  const post = await getArticleBySlugAndType(params.slug, params.category.toUpperCase().replace("-", "_"));
+  const { category } = await params;
+  const { slug } = await params;
+    const post = await getArticleBySlugAndType(slug, category.toUpperCase().replace("-", "_"));
 
   return {
-            title: post.metaTitle,
-            description: post?.metaDescription ? post?.metaDescription : '' + ' ' + params.category,
+            title: post?.metaTitle,
+            description: post?.metaDescription ? post?.metaDescription : '' + ' ' + category,
             alternates: {
-                canonical: '/article/' + params.category + '/' + params.slug
+                canonical: '/article/' + category + '/' + slug
             },
         };
 }
 
 export default async function PostDefault({ params }) {
-
-    const post = await getArticleBySlugAndType(params.slug, params.category.toUpperCase().replace("-", "_"));
+    const { category } = await params;
+    const { slug } = await params;
+    const post = await getArticleBySlugAndType(slug, category.toUpperCase().replace("-", "_"));
 
     const jsonLd = [{
         '@context': 'https://schema.org',
@@ -39,14 +42,14 @@ export default async function PostDefault({ params }) {
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": params.category.replace("-", " "),
-                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${params.category}`
+                "name": category.replace("-", " "),
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category}`
             },
             {
                 "@type": "ListItem",
                 "position": 4,
                 "name": post.title,
-                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${params.category}/${params.slug}`
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category}/${slug}`
             }
         ]
     }];
@@ -60,12 +63,12 @@ export default async function PostDefault({ params }) {
                 "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}`
             },
             {
-                "name": params.category.replace("-", " "),
-                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${params.category}`
+                "name": category.replace("-", " "),
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category}`
             },
             {
-                "name": post.titleBreadcrumb,
-                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${params.category}/${params.slug}`
+                "name": post?.titleBreadcrumb,
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category}/${slug}`
             }
         ]
     ;

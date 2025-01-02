@@ -8,6 +8,7 @@ import { parseISO, format } from "date-fns";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
+import PostList from "@/components/postlist";
 
 export default function Post(props) {
   const { loading, post } = props;
@@ -206,13 +207,27 @@ export default function Post(props) {
             </a>
           </div>
           {post.author && <AuthorCard author={post.author} />}
+          {post?.articleProposal && (
+              <>
+                <div className={"prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600"}>
+                  <h2 key={'otherArticle'}>
+                    D&apos;autres pages qui pourraient vous intéresser !
+                  </h2>
+                </div>
+                <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
+                  {post?.articleProposal?.map(article => (
+                      <PostList key={article.slug} article={article} aspect="square"/>
+                  ))}
+                </div>
+              </>
+          )}
         </article>
       </Container>
     </>
   );
 }
 
-const MainImage = ({ image }) => {
+const MainImage = ({image}) => {
   return (
     <div className="mb-12 mt-12 ">
       <Image {...urlForImage(image)} alt={image.alt || "Thumbnail"} />
