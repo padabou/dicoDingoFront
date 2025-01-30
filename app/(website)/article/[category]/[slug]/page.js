@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
             title: post?.metaTitle,
             description: post?.metaDescription ? post?.metaDescription : '' + ' ' + category,
             alternates: {
-                canonical: '/article/' + category + '/' + slug
+                canonical: '/article/' + category.replace("_", "-") + '/' + slug
             },
         };
 }
@@ -63,12 +63,12 @@ export default async function PostDefault({ params }) {
                 "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}`
             },
             {
-                "name": category.replace("-", " "),
-                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category}`
+                "name": category.replace("_", " "),
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/category.replace("_", "-")`
             },
             {
                 "name": post?.titleBreadcrumb,
-                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category}/${slug}`
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/category.replace("_", "-")/${slug}`
             }
         ]
     ;
