@@ -50,12 +50,12 @@ export default function Navbar(props) {
       href: "/article/blog"
     },
     {
-      label: "Contribuer",
-      href: "/contribution"
+      label: "Anecdote",
+      href: "/article/anecdote"
     },
     {
-      label: "Contact",
-      href: "/contact"
+      label: "Contribuer",
+      href: "/contribution"
     }
   ];
 
