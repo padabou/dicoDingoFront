@@ -2,6 +2,7 @@ import CategoryPage from "./category";
 import {setBreadcrumb} from "@/components/serverContext";
 import Breadcrumb from "@/components/breadcrumb";
 import {getTypeWithArticle} from "@/lib/type/client";
+import ReactHtmlParser from "html-react-parser";
 
 export async function generateMetadata({ params }) {
   const { category } = await params;
@@ -54,7 +55,8 @@ export default async function CategoryIndex({ params, searchParams }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
         <Breadcrumb />
-        <CategoryPage articles={type.articles} category={category}/>
+
+        <CategoryPage type={type} category={category}/>
     </section>
   );
 }

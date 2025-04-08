@@ -1,26 +1,34 @@
 import Container from "@/components/container";
 import PostList from "@/components/postlist";
 import ArticlePagination from "@/components/ArticlePagination";
+import ReactHtmlParser from "html-react-parser";
 
-export default function Category({ articles, category }) {
+export default function Category({ type, category }) {
 
   return (
     <>
-        {articles?.totalPages > 1 && (
-            <ArticlePagination articles={articles} url={`/article/${category}?page=`} />
+        <Container>
+        {type?.intro && (
+            <div className={'mt-5 text-custom-grey'}>
+                {type.intro && ReactHtmlParser(type.intro)}
+            </div>
         )}
-      {articles?.articles && (
+        </Container>
+        {type?.articles?.totalPages > 1 && (
+            <ArticlePagination articles={type.articles} url={`/article/${category}?page=`} />
+        )}
+      {type?.articles?.articles && (
         <Container>
 
           <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
-            {articles?.articles.map(article => (
+            {type?.articles?.articles.map(article => (
               <PostList key={article.slug} article={article} aspect="square" />
             ))}
           </div>
 
         </Container>
       )}
-        {articles?.totalPages > 1 && (
+        {type?.articles?.totalPages > 1 && (
             <ArticlePagination articles={articles}  url={`/article/${category}?page=`} />
         )}
         <Container>
