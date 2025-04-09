@@ -19,6 +19,7 @@ export async function generateMetadata({ params }) {
 
 export default async function CategoryIndex({ params, searchParams }) {
   const { category } = await params;
+  console.log(category);
   const { page } = await searchParams;
   const type = await getTypeWithArticle(category.toUpperCase().replace("-", "_"), page);
 

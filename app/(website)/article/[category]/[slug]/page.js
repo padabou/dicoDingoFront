@@ -64,11 +64,11 @@ export default async function PostDefault({ params }) {
             },
             {
                 "name": category.replace("_", " "),
-                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/category.replace("_", "-")`
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category.replace("_", "-")}`
             },
             {
                 "name": post?.titleBreadcrumb,
-                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/category.replace("_", "-")/${slug}`
+                "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category.replace("_", "-")}/${slug}`
             }
         ]
     ;
