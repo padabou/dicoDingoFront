@@ -29,7 +29,7 @@ export default function Category({ type, category }) {
         </Container>
       )}
         {type?.articles?.totalPages > 1 && (
-            <ArticlePagination articles={articles}  url={`/article/${category}?page=`} />
+            <ArticlePagination articles={type?.articles}  url={`/article/${category}?page=`} />
         )}
         <Container>
             <div className="mt-10 flex justify-center">
