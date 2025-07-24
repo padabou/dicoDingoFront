@@ -2,23 +2,41 @@
 
 import Container from "@/components/container";
 import {useState} from "react";
+import { Verify } from 'react-puzzle-captcha';
+import 'react-puzzle-captcha/dist/react-puzzle-captcha.css';
 
 export default function Contact({ settings }) {
 
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [showCaptcha, setShowCaptcha] = useState(false);
+  const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const style = {
+    display: 'inline-block',
+    marginRight: '20px',
+    marginBottom: '20px',
+    width: '100px',
+    padding: '5px 20px',
+    color: '#fff',
+    textAlign: 'center',
+    cursor: 'pointer',
+    background: '#1991FA',
+  };
+
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setShowCaptcha(true); // Affiche la div captcha
   };
 
   const handleCaptchaSuccess = () => {
     setShowCaptcha(false);
+    setIsSubmitSuccessful(false);
+    setIsSuccess(false);
     // Ensuite, tu peux envoyer le formulaire ici via fetch ou autre
     alert("Formulaire validé après captcha !");
   };
@@ -77,8 +95,8 @@ export default function Contact({ settings }) {
             </button>
           </form>
           {showCaptcha && (
-              <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-                <div className="bg-white p-8 rounded-lg max-w-md text-center space-y-4 shadow-lg">
+              <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50" onClick={() => setShowCaptcha(false)}>
+                <div className="bg-white p-8 rounded-lg max-w-md text-center space-y-4 shadow-lg z-[60]" onClick={() => setShowCaptcha(true)}>
                   <h3 className="text-xl font-bold">Vérification</h3>
                   <p>Veuillez compléter le captcha pour continuer</p>
                   <Verify
