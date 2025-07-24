@@ -29,7 +29,7 @@ export default function Post(props) {
   return (
     <>
       <Container className="!pt-0">
-        <div className="mx-auto max-w-screen-md ">
+        <div className="mx-auto">
           <div className="flex justify-center">
             <CategoryLabel categories={post.categories} />
           </div>
@@ -74,15 +74,15 @@ export default function Post(props) {
 
       <Container>
 
-        <article className="mx-auto max-w-screen-md ">
+        <article className="mx-auto">
           {post?.intro && (
-              <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
+              <div className="mx-auto my-3 flex justify-center">
                 {post.intro && ReactHtmlParser(post.intro)}
               </div>
           )}
-          <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
+          <div className="mx-auto my-3">
             {imageProps && (
-                <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
+                <div className="relative z-0 mx-auto aspect-video overflow-hidden lg:rounded-lg">
                   <Image
                       src={imageProps}
                       alt={post?.pictureAlt || "Thumbnail"}
@@ -209,7 +209,7 @@ export default function Post(props) {
           {post.author && <AuthorCard author={post.author} />}
           {post?.articleProposal && (
               <>
-                <div className={"prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600"}>
+                <div className={"mx-auto my-3"}>
                   <h2 key={'otherArticle'}>
                     D&apos;autres pages qui pourraient vous intéresser !
                   </h2>

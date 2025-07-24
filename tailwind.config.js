@@ -9,6 +9,10 @@ module.exports = {
   ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
+    container: {
+      center: true,
+      maxWith: '100%',
+    },
     extend: {
       colors: {
         gray: colors.neutral,

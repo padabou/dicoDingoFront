@@ -30,6 +30,10 @@ export default function Navbar(props) {
         {
           title: "Le matériel",
           path: "/article/materiel-cheval"
+        },
+        {
+          title: "Son quotidien",
+          path: "/article/cheval-quotidien"
         }
       ]
     },
@@ -62,7 +66,7 @@ export default function Navbar(props) {
   const mobilemenu = [...leftmenu, ...rightmenu];
 
   return (
-      <Container className="bg-custom-blue text-white-50">
+      <Container large="true" className="bg-custom-blue text-white-50">
         <nav>
           <Disclosure>
             {({open}) => (

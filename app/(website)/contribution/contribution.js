@@ -8,7 +8,7 @@ export default function Contribution({ settings }) {
               Contribue avec nous à faire évoluer EQUIDICO
           </h1>
           <div className="text-center">
-              <p className="text-lg">Envoie nous tes infos !</p>
+              <p className="text-lg">Envoie nous tes infos sur les chevaux et tes photos !</p>
           </div>
 
           <iframe src="https://app.youform.com/forms/fqa0mboi" loading="lazy" width="100%" height="700" frameBorder="0"

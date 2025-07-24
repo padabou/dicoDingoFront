@@ -3,7 +3,6 @@ import PostList from "@/components/postlist";
 import Carousel from "@/components/carousel";
 
 export default function Post({ data }) {
-    console.log(data.pictures);
   return (
     <>
         <Container>
@@ -51,10 +50,20 @@ export default function Post({ data }) {
         </Container>
         {data && (
             <>
-                <Container className="bg-custom-clear-blue mb-4">
+                <Container className="bg-custom-clear-blue pb-4">
+                    <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
+                        <h2 className="text-custom-sauge-green text-4xl font-extrabold dark:text-white">
+                            Toutes nos rubriques ici !!</h2>
+                        {data?.types?.map(type => (
+                            <PostList key={type.slug} article={type} aspect="square"/>
+                        ))}
+                    </div>
+
+                </Container>
+                <Container className="bg-custom-broken-white pb-4">
                     <h2 className="text-custom-sauge-green mb-4 text-4xl font-extrabold dark:text-white">
                         Nos derniers articles !!</h2>
-                <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">
+                <div className="grid gap-10 md:grid-cols-3 lg:gap-10 ">
 
                     {data?.lastArticles?.map(article => (
                         <PostList
@@ -66,7 +75,7 @@ export default function Post({ data }) {
                     ))}
                 </div>
             </Container>
-            <Container className="bg-custom-broken-white mb-4">
+            <Container className="bg-custom-clear-blue pb-4">
                 <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
                     <h2 className="text-custom-sauge-green text-4xl font-extrabold dark:text-white">
                         Vos articles préférés !!</h2>
@@ -74,23 +83,15 @@ export default function Post({ data }) {
                         <PostList key={article.slug} article={article} aspect="square"/>
                     ))}
                 </div>
-            </Container>
-            <Container className="bg-custom-clear-blue mb-4">
-                <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
-                    <h2 className="text-custom-sauge-green text-4xl font-extrabold dark:text-white">
-                        Toutes nos rubriques ici !!</h2>
-                    {data?.types?.map(type => (
-                        <PostList key={type.slug} article={type} aspect="square"/>
-                    ))}
-                </div>
                 <div className="mt-10 flex justify-center">
                     <a
                         href="/"
                         className="relative inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 disabled:pointer-events-none disabled:opacity-40 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300">
-                        <span>Page d&apos;accueil</span>
+                        <span>Haut de page</span>
                     </a>
                 </div>
             </Container>
+
             </>
         )}
     </>
