@@ -42,7 +42,7 @@ export default async function PostDefault({ params }) {
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": category.replace("-", " "),
+                "name": post.typeLabel,
                 "item": `${process.env.NEXT_PUBLIC_ARTICLE_URL}/${category}`
             },
             {
