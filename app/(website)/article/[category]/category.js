@@ -20,7 +20,7 @@ export default function Category({ type, category }) {
       {type?.articles?.articles && (
         <Container>
 
-          <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
+          <div className="mt-10 grid gap-16 md:grid-cols-2 lg:gap-10 xl:grid-cols-2 ">
             {type?.articles?.articles.map(article => (
               <PostList key={article.slug} article={article} aspect="square" />
             ))}

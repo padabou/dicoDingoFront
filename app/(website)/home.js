@@ -51,7 +51,7 @@ export default function Post({ data }) {
         {data && (
             <>
                 <Container className="bg-custom-clear-blue pb-4">
-                    <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
+                    <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-2">
                         <h2 className="text-custom-sauge-green text-4xl font-extrabold dark:text-white">
                             Toutes nos rubriques ici !!</h2>
                         {data?.types?.map(type => (
@@ -63,7 +63,7 @@ export default function Post({ data }) {
                 <Container className="bg-custom-broken-white pb-4">
                     <h2 className="text-custom-sauge-green mb-4 text-4xl font-extrabold dark:text-white">
                         Nos derniers articles !!</h2>
-                <div className="grid gap-10 md:grid-cols-3 lg:gap-10 ">
+                <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">
 
                     {data?.lastArticles?.map(article => (
                         <PostList
@@ -76,7 +76,7 @@ export default function Post({ data }) {
                 </div>
             </Container>
             <Container className="bg-custom-clear-blue pb-4">
-                <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
+                <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-2">
                     <h2 className="text-custom-sauge-green text-4xl font-extrabold dark:text-white">
                         Vos articles préférés !!</h2>
                     {data?.mostViewed?.map(article => (

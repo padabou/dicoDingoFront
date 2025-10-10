@@ -4,6 +4,7 @@ import { urlForImage } from "@/lib/sanity/image";
 import { parseISO, format } from "date-fns";
 import { PhotoIcon } from "@heroicons/react/24/outline";
 import CategoryLabel from "@/components/blog/category";
+import ReactHtmlParser from "html-react-parser";
 
 export default function PostList({
   article,
@@ -25,16 +26,16 @@ export default function PostList({
     <>
       <div
         className={cx(
-          "group cursor-pointer",
+          "group mx-8",
           minimal && "grid gap-10 md:grid-cols-2"
         )}>
         <div
           className={cx(
-            " overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800"
+            " overflow-hidden  bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800 grid gap-4 md:grid-cols-2"
           )}>
           <a
             className={cx(
-              "relative block",
+              "relative block cursor-pointer",
               aspect === "landscape"
                 ? "aspect-video"
                 : aspect === "custom"
@@ -47,7 +48,7 @@ export default function PostList({
                 src={imageSrc}
                 alt={article.title || "Thumbnail"}
                 priority={preloadImage ? true : false}
-                className="object-cover transition-all"
+                className="object-cover transition-all rounded-md aspect"
                 fill
                 sizes="(max-width: 768px) 30vw, 33vw"
               />
@@ -57,6 +58,11 @@ export default function PostList({
               </span>
             )}
           </a>
+            {article?.intro && (
+                <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
+                  {article.intro && ReactHtmlParser(article.intro)}
+                </div>
+            )}
         </div>
 
         <div className={cx(minimal && "flex items-center")}>
