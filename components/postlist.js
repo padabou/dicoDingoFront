@@ -59,8 +59,24 @@ export default function PostList({
             )}
           </a>
             {article?.intro && (
-                <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
-                  {article.intro && ReactHtmlParser(article.intro)}
+                <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600 ">
+                  <p className="line-clamp-[6]">
+                  {article.intro && ReactHtmlParser(article.intro)} ...
+                </p>
+                  <p>
+                    <a href={articleHref}>
+                      <span
+                          className="text-custom-red hover:text-custom-sauge-green bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
+                            bg-no-repeat
+                            transition-[background-size]
+                            duration-500
+                            hover:bg-[length:100%_3px]
+                            group-hover:bg-[length:100%_10px]
+                            dark:from-purple-800 dark:to-purple-900">
+                        Voir plus !
+                      </span>
+                    </a>
+                  </p>
                 </div>
             )}
         </div>
