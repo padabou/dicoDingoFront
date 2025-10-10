@@ -34,13 +34,28 @@ export default function Navbar(props) {
         {
           title: "Son quotidien",
           path: "/article/cheval-quotidien"
+        },
+        {
+          label: "Les Discipline",
+          href: "/article/discipline"
         }
       ]
     },
     {
-      label: "Discipline",
-      href: "/article/discipline"
+      label: "Le Matériel",
+      href: "/article/materiel-cheval",
+      children: [
+        {
+          title: "Le matériel du cheval",
+          path: "/article/materiel-cheval"
+        },
+        {
+          title: "Le matériel du cavalier",
+          path: "/article/materiel-cavalier"
+        }
+      ]
     }
+
   ];
 
   const rightmenu = [
