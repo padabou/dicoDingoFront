@@ -4,13 +4,15 @@ import Container from "@/components/container";
 import {useState} from "react";
 import { Verify } from 'react-puzzle-captcha';
 import 'react-puzzle-captcha/dist/react-puzzle-captcha.css';
+import {postContact} from "@/lib/contact/publicClient";
 
 export default function Contact({ settings }) {
 
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", cheatField: "", verify: "" });
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [message, setMessage] = useState("");
 
   const style = {
     display: 'inline-block',
@@ -33,12 +35,33 @@ export default function Contact({ settings }) {
     setShowCaptcha(true); // Affiche la div captcha
   };
 
-  const handleCaptchaSuccess = () => {
+  const handleCaptchaSuccess = async (verify) => {
     setShowCaptcha(false);
     setIsSubmitSuccessful(false);
     setIsSuccess(false);
+    setFormData({ ...formData, verify: verify });
+    const form= { username: formData.name, email: formData.email, message: formData.message, cheatField: formData.cheatField, verify: verify }
     // Ensuite, tu peux envoyer le formulaire ici via fetch ou autre
-    alert("Formulaire validé après captcha !");
+    await postContact(form).then((res) => {
+      if(res.status === 200) {
+        setIsSubmitSuccessful(true);
+        setIsSuccess(true);
+        setMessage("Le message a été envoyé correctement")
+      }
+      else {
+        setIsSubmitSuccessful(true);
+        setIsSuccess(false);
+        if(res.status === 400) {
+          setMessage( "Le Captcha ne semble pas valide, veuillez réessayer");
+        } else if(res.status === 406) {
+          setMessage("Veuillez valider le formulaire");
+        } else if(res.status === 425) {
+          setMessage("Votre dernier envoi de message est trop récent, veuillez attendre avant de nous recontacter, nous répondrons le plus rapidement possible à votre dernier message.");
+        } else {
+          setMessage("Une erreur est survenu, notre équipe s'efforce de résoudre le problème");
+        }
+      }
+    });
   };
 
 
@@ -52,17 +75,27 @@ export default function Contact({ settings }) {
       </div>
 
       <div className="grid my-10 md:grid-cols-2">
-        <div className="my-10">
+        <div className="my-10 px-10">
           <h2 className="text-2xl font-semibold dark:text-white">
             Contact equi dico
           </h2>
-          <p className="max-w-sm mt-5">
-            Quelque chose à dire ? Nous sommes là pour vous aider. Remplissez le formulaire, nous vous répondrons
-            dans les plus bref délais.
+          <p className=" mt-5">
+            Une question ? Un besoin ? Un message ?
+            Ecrivez nous, on s'engage à vous répondre au plus vite.
           </p>
 
         </div>
         <div>
+          {isSubmitSuccessful && isSuccess && (
+              <div className="mt-3 text-sm text-center text-green-500">
+                {message || "Le message a été envoyé correctement"}
+              </div>
+          )}
+          {isSubmitSuccessful && !isSuccess && (
+              <div className="mt-3 text-sm text-center text-red-500">
+                {message || "Le Captcha ne semble pas valide, veuillez réessayer"}
+              </div>
+          )}
           <form
               onSubmit={handleSubmit}
               className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md space-y-4"
@@ -81,6 +114,12 @@ export default function Contact({ settings }) {
                 placeholder="Votre email"
                 onChange={handleChange}
                 required
+                className="w-full p-2 border rounded"
+            />
+            <input
+                type="hidden"
+                name="cheatField"
+                onChange={handleChange}
                 className="w-full p-2 border rounded"
             />
             <textarea
@@ -103,23 +142,13 @@ export default function Contact({ settings }) {
                       width={320}
                       height={160}
                       visible={showCaptcha}
-                      onSuccess={() => alert('success')}
-                      onFail={() => alert('fail')}
+                      onCustomverify={handleCaptchaSuccess}
                       onRefresh={() => alert('refresh')}
                   />
                 </div>
               </div>
           )}
-          {isSubmitSuccessful && isSuccess && (
-            <div className="mt-3 text-sm text-center text-green-500">
-              {message || "Success. Message sent successfully"}
-            </div>
-          )}
-          {isSubmitSuccessful && !isSuccess && (
-            <div className="mt-3 text-sm text-center text-red-500">
-              {message || "Something went wrong. Please try later."}
-            </div>
-          )}
+
         </div>
       </div>
     </Container>
