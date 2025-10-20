@@ -81,7 +81,7 @@ export default function Contact({ settings }) {
           </h2>
           <p className=" mt-5">
             Une question ? Un besoin ? Un message ?
-            Ecrivez nous, on s'engage à vous répondre au plus vite.
+            Ecrivez nous, on s&apos;engage à vous répondre au plus vite.
           </p>
 
         </div>

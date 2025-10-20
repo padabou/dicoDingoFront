@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       json = {
         message: "probleme  send message"
       };
-      console.log("error " + res);
+      console.error("error " + JSON.stringify(contactResult));
       return NextResponse.json(json, { status: contactResult.status});
     }
 
