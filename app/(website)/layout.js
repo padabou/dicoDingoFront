@@ -12,7 +12,7 @@ async function sharedMetaData(params) {
       default:
         settings?.title ||
         "EQUIDICO, le blog qui dit tout sur les chevaux",
-      template: "%s | EQUIDICO, le blog qui dit tout sur les chevaux"
+      template: "%s | EQUIDICO"
     },
     description:
       settings?.description ||
