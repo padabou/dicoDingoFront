@@ -13,9 +13,7 @@ export default function SearchPage({ articles, search }) {
         <div>
           Vous avez demandé les pages qui concernent : &quot;{search}&quot;
         </div>
-        {articles?.totalPages > 1 && (
-            <ArticlePagination articles={articles} url={`/recherche?search=${search}&page=`}  />
-        )}
+
         {articles?.articles && (
         <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
           {articles?.articles.map(article => (
@@ -23,9 +21,7 @@ export default function SearchPage({ articles, search }) {
           ))}
         </div>
         )}
-        {articles?.totalPages > 1 && (
-            <ArticlePagination articles={articles} url={`/recherche?search=${search}&page=`}  />
-        )}
+
         <div className="mt-10 flex justify-center">
           <Link
               href="/"
