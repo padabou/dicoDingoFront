@@ -12,8 +12,8 @@ dependencies:
     specifier: ^2.2.0
     version: 2.2.0(react@18.2.0)
   '@next/third-parties':
-    specifier: ^15.1.1
-    version: 15.5.7(next@15.2.4)(react@18.2.0)
+    specifier: ^16.0.8
+    version: 16.0.8(next@15.2.4)(react@18.2.0)
   '@portabletext/react':
     specifier: ^3.0.11
     version: 3.0.11(react@18.2.0)
@@ -3169,10 +3169,10 @@ packages:
     dev: false
     optional: true
 
-  /@next/third-parties@15.5.7(next@15.2.4)(react@18.2.0):
-    resolution: {integrity: sha512-xIahs2sBMwYBtI0CLSUCMtKXen6T8G23Cq1WogA8BMRSIDqkhHutHpu+nrdzSNVg4yA59B8oU8DFdcGz4WHWtw==}
+  /@next/third-parties@16.0.8(next@15.2.4)(react@18.2.0):
+    resolution: {integrity: sha512-F8TNI1GFm7ivZX6HBMDVsDklAXOHlACbtw7w3WFbDk2oFXdVgKZBfdK+ILhjTBK4ibIXzLMWO1Py3bgSETKHYQ==}
     peerDependencies:
-      next: ^13.0.0 || ^14.0.0 || ^15.0.0
+      next: ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0-beta.0
       react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
     dependencies:
       next: 15.2.4(@babel/core@7.28.5)(react-dom@18.2.0)(react@18.2.0)
