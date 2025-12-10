@@ -66,8 +66,8 @@ dependencies:
     specifier: ^14.1.0
     version: 14.1.0(eslint@8.56.0)(typescript@5.3.3)
   eslint-config-sanity:
-    specifier: ^7.0.1
-    version: 7.0.1(eslint-plugin-import@2.29.1)(eslint@8.56.0)
+    specifier: ^7.1.4
+    version: 7.1.4(eslint-plugin-import@2.29.1)(eslint@8.56.0)
   get-video-id:
     specifier: ^3.6.5
     version: 3.6.5
@@ -6718,15 +6718,16 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-config-sanity@7.0.1(eslint-plugin-import@2.29.1)(eslint@8.56.0):
-    resolution: {integrity: sha512-hYHen7UnWrn3ldvhG0wNH/6kt+lD5O2VN5zR+KbQgCdsy/eWG2GWe9bw+rwOa+ihegy+2As6T7dtiW1m4AiXQA==}
+  /eslint-config-sanity@7.1.4(eslint-plugin-import@2.29.1)(eslint@8.56.0):
+    resolution: {integrity: sha512-7vu5Mqnt77qKiU0peJwYeNUS6Ks76qjuOkeVBAV3QyEw56Gytxl3RVt6obp34lRl2Z59k68LCE85Qce2hzim3g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^6.7.5
-      '@typescript-eslint/parser': ^6.7.5
-      eslint: ^8.51.0
+      '@typescript-eslint/eslint-plugin': ^6.7.5 || ^7.0.0 || ^8.0.0
+      '@typescript-eslint/parser': ^6.7.5 || ^7.0.0 || ^8.0.0
+      eslint: ^8.51.0 || ^9.0.0
       eslint-plugin-import: ^2.28.1
       eslint-plugin-react: ^7.33.2
+      eslint-plugin-react-hooks: '*'
     peerDependenciesMeta:
       '@typescript-eslint/eslint-plugin':
         optional: true
@@ -6736,9 +6737,12 @@ packages:
         optional: true
       eslint-plugin-react:
         optional: true
+      eslint-plugin-react-hooks:
+        optional: true
     dependencies:
       eslint: 8.56.0
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.19.1)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
+      eslint-plugin-simple-import-sort: 12.1.1(eslint@8.56.0)
     dev: false
 
   /eslint-import-resolver-node@0.3.9:
@@ -6896,6 +6900,14 @@ packages:
       resolve: 2.0.0-next.5
       semver: 6.3.1
       string.prototype.matchall: 4.0.10
+    dev: false
+
+  /eslint-plugin-simple-import-sort@12.1.1(eslint@8.56.0):
+    resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
+    peerDependencies:
+      eslint: '>=5.0.0'
+    dependencies:
+      eslint: 8.56.0
     dev: false
 
   /eslint-scope@7.2.2:
