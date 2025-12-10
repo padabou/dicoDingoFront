@@ -72,7 +72,7 @@ dependencies:
     specifier: ^3.6.5
     version: 3.6.5
   html-react-parser:
-    specifier: ^5.1.2
+    specifier: ^5.2.10
     version: 5.2.10(@types/react@19.2.7)(react@18.2.0)
   next:
     specifier: 15.2.4
