@@ -28,16 +28,16 @@ export default function Navbar(props) {
           path: "/article/race"
         },
         {
-          title: "Le matériel",
-          path: "/article/materiel-cheval"
-        },
-        {
           title: "Son quotidien",
           path: "/article/cheval-quotidien"
         },
         {
           label: "Les Discipline",
           href: "/article/discipline"
+        },
+        {
+          label: "Les métiers",
+          href: "/article/metier"
         }
       ]
     },

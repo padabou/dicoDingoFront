@@ -20,6 +20,7 @@
     "@sanity/types": "^4.21.0",
     "@sanity/ui": "^2.0.1",
     "@sanity/vision": "^3.79.0",
+    "@sentry/nextjs": "^10.29.0",
     "@tailwindcss/typography": "^0.5.19",
     "@vercel/og": "^0.6.2",
     "@web3forms/react": "^1.1.3",
