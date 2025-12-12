@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 .token.tag,
 .token.class-name,
 .token.selector,
@@ -55,7 +57,7 @@
 
 .token.deleted:not(.prefix)::after {
   content: "";
-  @apply pointer-events-none absolute inset-0 block bg-rose-400 bg-opacity-25;
+  @apply pointer-events-none absolute inset-0 block bg-rose-400/25;
 }
 
 .token.deleted.prefix {
@@ -63,11 +65,11 @@
 }
 
 .token.inserted:not(.prefix) {
-  @apply block bg-emerald-700 bg-opacity-50 -mx-4 px-4;
+  @apply block bg-emerald-700/50 -mx-4 px-4;
 }
 
 .token.inserted.prefix {
-  @apply text-emerald-200 text-opacity-75 select-none;
+  @apply text-emerald-200/75 select-none;
 }
 
 .refractor-marker {

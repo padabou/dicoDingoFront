@@ -32,12 +32,8 @@ export default function Navbar(props) {
           path: "/article/cheval-quotidien"
         },
         {
-          label: "Les Discipline",
+          title: "Les Disciplines",
           href: "/article/discipline"
-        },
-        {
-          label: "Les métiers",
-          href: "/article/metier"
         }
       ]
     },
@@ -54,6 +50,10 @@ export default function Navbar(props) {
           path: "/article/materiel-cavalier"
         }
       ]
+    },
+    {
+      label: "Les métiers",
+      href: "/article/metier"
     }
 
   ];

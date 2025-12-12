@@ -2,33 +2,30 @@
 
 import { useTheme } from "next-themes";
 import { SunIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 
-const ThemeSwitch = () => {
-  //   const [mounted, setMounted] = useState(false);
-  //   const { resolvedTheme, setTheme } = useTheme();
-  const { theme, setTheme } = useTheme();
-  // useEffect only runs on the client, so now we can safely show the UI
-  //   useEffect(() => {
-  //     setMounted(true);
-  //   }, []);
+export default function ThemeSwitch() {
+    const { theme, setTheme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
 
-  //   if (!mounted) {
-  //     return null;
-  //   }
+    // Évite les erreurs d'hydratation
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
 
-  return (
-    <div className="inline-flex items-center">
-      <SunIcon className="w-4 h-4 mr-2" />
-      <select
-        name="themeSwitch"
-        value={theme}
-        onChange={e => setTheme(e.target.value)}>
-        <option value="system">System</option>
-        <option value="dark">Dark</option>
-        <option value="light">Light</option>
-      </select>
-    </div>
-  );
-};
+    return (
+        <div className="inline-flex items-center">
+            <SunIcon className="w-4 h-4 mr-2" />
 
-export default ThemeSwitch;
+            <select
+                name="themeSwitch"
+                value={theme === "system" ? "system" : resolvedTheme}
+                onChange={(e) => setTheme(e.target.value)}
+                className="bg-transparent dark:text-gray-200 text-gray-800"
+            >
+                <option value="system">System</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+            </select>
+        </div>
+    );
+}

@@ -1,9 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/*! purgecss start ignore */
-@import "prism.css";
-/*! purgecss end ignore */
+@variant dark (&:where(.dark, .dark *));
 
-/*Custom Styles Here*/
+@theme extend {
+    /* Couleurs personnalisées */
+    --color-custom-blue: #00539c;
+    --color-custom-red: #c27c6a;
+    --color-custom-sauge-green: #a4c2a5;
+    --color-custom-grey: #2e2e2e;
+    --color-custom-broken-white: #f5f5f5;
+    --color-custom-clear-blue: #eaf0f6;
+
+    /* Remplacer gray par neutral (colors.neutral) */
+    --color-gray-50: #fafafa;
+    --color-gray-100: #f5f5f5;
+    --color-gray-200: #e5e5e5;
+    --color-gray-300: #d4d4d4;
+    --color-gray-400: #a3a3a3;
+    --color-gray-500: #737373;
+    --color-gray-600: #525252;
+    --color-gray-700: #404040;
+    --color-gray-800: #262626;
+    --color-gray-900: #171717;
+    --color-gray-950: #0a0a0a;
+
+    /* Font families */
+    --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-stock: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    /* Aspect ratios personnalisés */
+    --aspect-ratio-4-3: 4 / 3;
+    --aspect-ratio-3-2: 3 / 2;
+    --aspect-ratio-2-3: 2 / 3;
+    --aspect-ratio-9-16: 9 / 16;
+
+    /* Transition durations */
+    --transition-duration-DEFAULT: 150ms;
+    --transition-duration-75: 75ms;
+    --transition-duration-100: 100ms;
+    --transition-duration-150: 150ms;
+    --transition-duration-200: 200ms;
+    --transition-duration-300: 300ms;
+    --transition-duration-500: 500ms;
+    --transition-duration-700: 700ms;
+    --transition-duration-1000: 1000ms;
+    --transition-duration-3000: 3000ms;
+}
+
+/* Container personnalisé */
+@layer utilities {
+    .container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Dark mode - Tailwind v4 le gère automatiquement avec la classe .dark */
