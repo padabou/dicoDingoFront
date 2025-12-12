@@ -1,6 +1,7 @@
 import PostPage from "./default";
 
 import {getArticleBySlugAndType} from "@/lib/article/client";
+import {getBreadcrumb, setBreadcrumb} from "@/components/serverContext";
 import Breadcrumb from "@/components/breadcrumb";
 
 export async function generateMetadata({ params }) {

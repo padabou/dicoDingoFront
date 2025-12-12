@@ -223,7 +223,7 @@ const DropdownMenu = ({menu, items, mobile}) => {
                       open
                           ? "text-blue-500 hover:text-custom-red"
                           : " text-white dark:text-gray-400 ",
-                      mobile ? "w-full px-4 py-2 " : "inline-block px-4 py-2"
+                      mobile ? "w-full px-4 py-2 " : "px-4 py-2"
                   )}>
                 <span>{menu.label}</span>
                 <ChevronDownIcon className="mt-0.5 h-4 w-4"/>
