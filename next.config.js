@@ -6,7 +6,6 @@ const nextConfig = {
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
-  swcMinify: true,
 
   images: {
     unoptimized: true,
@@ -26,9 +25,6 @@ const nextConfig = {
     ignoreBuildErrors: process.env.VERCEL_ENV === "production",
   },
 
-  eslint: {
-    ignoreDuringBuilds: process.env.VERCEL_ENV === "production",
-  },
 
   env: {
     BASE_URL: process.env.NEXT_PUBLIC_SITE_URL,

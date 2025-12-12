@@ -4,3 +4,5 @@ nodes_modules/**
 Makefile
 README.md
 docker-compose.yml
+pnpm-lock.yaml
+.next

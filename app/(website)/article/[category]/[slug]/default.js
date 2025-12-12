@@ -210,6 +210,7 @@ export default function Post(props) {
             </a>
           </div>
       </Container>
+
         <Container>
           {post.author && <AuthorCard author={post.author} />}
           {post?.articleProposal && (
