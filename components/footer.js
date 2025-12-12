@@ -25,9 +25,6 @@ export default function Footer(props) {
         </span>
         <ThemeSwitch />
       </div>
-        <div className="bg-white dark:bg-red-500 p-10">
-            Test Dark Mode
-        </div>
     </Container>
   );
 }
