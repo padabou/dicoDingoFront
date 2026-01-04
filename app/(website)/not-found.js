@@ -1,12 +1,21 @@
-"use client";
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function NotFound() {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 px-4">
-            <div className="max-w-2xl w-full text-center">
-                {/* 404 Number */}
-                <h1 className="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-4">
+            <div className={`max-w-2xl w-full text-center transition-all duration-1000 ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}>
+                <h1 className="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-4 animate-bounce">
                     404
                 </h1>
 
