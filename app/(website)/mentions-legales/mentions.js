@@ -25,7 +25,7 @@ export default function LegalMention() {
 
           <h2 className="text-4xl font-extrabold dark:text-white">Nous contacter</h2>
           <p>
-              Par email : contact@internet-ensemble.com
+              Par email : contact@equidico.fr
           </p>
           <h2 className="text-4xl font-extrabold dark:text-white">Données personnelles</h2>
 

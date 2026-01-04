@@ -21,7 +21,7 @@ export default function PostList({
   const AuthorimageProps = article?.author?.image
     ? urlForImage(article.author.image)
     : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
-  const articleHref = `/article/${article.type ? `${article.type.toLowerCase().replace("_", "-")}/` : ""}${article.slug}`;
+  const articleHref = `/article/${article?.type ? `${article.type.toLowerCase().replace("_", "-")}/` : ""}${article.slug}`;
   return (
     <>
       <div

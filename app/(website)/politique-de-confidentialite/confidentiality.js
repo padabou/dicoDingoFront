@@ -106,7 +106,7 @@ export default function Confidentiality() {
           <h2 className="text-4xl font-extrabold dark:text-white">
               NOUS CONTACTER
           </h2>
-          <p>Pour en savoir plus sur nos pratiques de confidentialité, si vous avez des questions ou si vous souhaitez déposer une réclamation, veuillez nous contacter par e-mail à contact@internet-ensemble.com</p>
+          <p>Pour en savoir plus sur nos pratiques de confidentialité, si vous avez des questions ou si vous souhaitez déposer une réclamation, veuillez nous contacter par e-mail à contact@equidico.fr</p>
           <p>Génération des mentions légales par Legalstart.</p>
 
       </Container>

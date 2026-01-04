@@ -143,7 +143,6 @@ export default function Contact({ settings }) {
                       height={160}
                       visible={showCaptcha}
                       onCustomverify={handleCaptchaSuccess}
-                      onRefresh={() => alert('refresh')}
                   />
                 </div>
               </div>

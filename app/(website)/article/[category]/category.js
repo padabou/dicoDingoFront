@@ -2,9 +2,14 @@ import Container from "@/components/container";
 import PostList from "@/components/postlist";
 import ArticlePagination from "@/components/ArticlePagination";
 import ReactHtmlParser from "html-react-parser";
+import { notFound } from "next/navigation";
 
 export default function Category({ type, category }) {
 
+    if (!type.slug) {
+        notFound();
+    }
+console.log(type);
   return (
     <>
         <Container>
