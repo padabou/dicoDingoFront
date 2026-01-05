@@ -81,7 +81,7 @@ export default function Navbar(props) {
   const mobilemenu = [...leftmenu, ...rightmenu];
 
   return (
-      <Container large="true" className="bg-custom-blue text-white-50">
+      <Container large="true" className="shadow-md py-0 lg:py-1" alt ="true">
         <nav>
           <Disclosure>
             {({open}) => (
@@ -96,13 +96,13 @@ export default function Navbar(props) {
                                     menu={item}
                                     key={`${item.label}${index}`}
                                     items={item.children}
-                                    className="text-white"
+                                    className="text-custom-blue"
                                 />
                             ) : (
                                 <a
                                     href={item.href}
                                     key={`${item.label}${index}`}
-                                    className="px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
+                                    className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
                                     target={item.external ? "_blank" : ""}
                                     rel={item.external ? "noopener" : ""}>
                                   {item.label}
@@ -117,15 +117,15 @@ export default function Navbar(props) {
                                 src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}common/logo-equidico-512.png`}
                                 alt="Logo"
                                 priority={true}
-                                sizes="(max-width: 640px) 100vw, 200px"
-                                width={`640`}
-                                height={`480`}
+                                sizes="(max-width: 50%) 100vw, 200px"
+                                width={`50`}
+                                height={`50`}
                             />
                       </a>
 
                       <Disclosure.Button
                           aria-label="Toggle Menu"
-                          className="ml-auto rounded-md px-2 py-1 text-white focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
+                          className="ml-auto rounded-md px-2 py-1 text-custom-blue focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
                         <svg
                             className="h-6 w-6 fill-current"
                             xmlns="http://www.w3.org/2000/svg"
@@ -161,15 +161,15 @@ export default function Navbar(props) {
                                 <a
                                     href={item.href}
                                     key={`${item.label}${index}`}
-                                    className="px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
+                                    className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
                                     target={item.external ? "_blank" : ""}
                                     rel={item.external ? "noopener" : ""}>
                                   <span> {item.label}</span>
                                   {item.badge && (
                                       <span
-                                          className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-600 dark:bg-cyan-200 dark:text-blue-800 ">
-                              {item.badge}
-                            </span>
+                                          className="ml-2 rounded text-custom-blue px-2 py-0.5 text-xs font-semibold text-blue-600 dark:bg-cyan-200 dark:text-blue-800 ">
+                                    {item.badge}
+                                  </span>
                                   )}
                                 </a>
                             )}
@@ -192,7 +192,7 @@ export default function Navbar(props) {
                                 <a
                                     href={item.href}
                                     key={`${item.label}${index}`}
-                                    className="w-full px-5 py-2 text-sm font-medium text-white hover:text-custom-red dark:text-gray-400"
+                                    className="w-full px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
                                     target={item.external ? "_blank" : ""}
                                     rel={item.external ? "noopener" : ""}>
                                   {item.label}
@@ -222,7 +222,7 @@ const DropdownMenu = ({menu, items, mobile}) => {
                       "flex items-center gap-x-1 rounded-md px-5 py-2 text-sm font-medium  outline-none transition-all focus:outline-none focus-visible:text-indigo-500 focus-visible:ring-1 dark:focus-visible:bg-gray-800",
                       open
                           ? "text-blue-500 hover:text-custom-red"
-                          : " text-white dark:text-gray-400 ",
+                          : " text-custom-blue dark:text-gray-400 ",
                       mobile ? "w-full px-4 py-2 " : "px-4 py-2"
                   )}>
                 <span>{menu.label}</span>
