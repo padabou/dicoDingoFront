@@ -63,8 +63,8 @@ dependencies:
     specifier: ^2.1.0
     version: 2.1.0
   date-fns:
-    specifier: ^3.3.1
-    version: 3.3.1
+    specifier: ^4.1.0
+    version: 4.1.0
   eslint:
     specifier: ^9.39.1
     version: 9.39.2
@@ -5133,7 +5133,7 @@ packages:
       lodash-es: 4.17.22
       reselect: 5.1.1
       rxjs: 7.8.2
-      zustand: 5.0.9(@types/react@19.2.8)(react@18.2.0)(use-sync-external-store@1.6.0)
+      zustand: 5.0.10(@types/react@19.2.8)(react@18.2.0)(use-sync-external-store@1.6.0)
     transitivePeerDependencies:
       - '@types/react'
       - debug
@@ -7823,10 +7823,6 @@ packages:
 
   /dataloader@2.2.3:
     resolution: {integrity: sha512-y2krtASINtPFS1rSDjacrFgn1dcUuoREVabwlOGOe4SdxenREqwjwjElAdwvbGM7kgZz9a3KVicWR7vcz8rnzA==}
-    dev: false
-
-  /date-fns@3.3.1:
-    resolution: {integrity: sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==}
     dev: false
 
   /date-fns@4.1.0:
@@ -14272,8 +14268,8 @@ packages:
     resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
     dev: false
 
-  /zustand@5.0.9(@types/react@19.2.8)(react@18.2.0)(use-sync-external-store@1.6.0):
-    resolution: {integrity: sha512-ALBtUj0AfjJt3uNRQoL1tL2tMvj6Gp/6e39dnfT6uzpelGru8v1tPOGBzayOWbPJvujM8JojDk3E1LxeFisBNg==}
+  /zustand@5.0.10(@types/react@19.2.8)(react@18.2.0)(use-sync-external-store@1.6.0):
+    resolution: {integrity: sha512-U1AiltS1O9hSy3rul+Ub82ut2fqIAefiSuwECWt6jlMVUGejvf+5omLcRBSzqbRagSM3hQZbtzdeRc6QVScXTg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
