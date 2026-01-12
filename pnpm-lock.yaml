@@ -24,8 +24,8 @@ dependencies:
     specifier: 3.7.4
     version: 3.7.4(react@18.2.0)
   '@sanity/image-url':
-    specifier: ^1.0.2
-    version: 1.0.2
+    specifier: ^2.0.2
+    version: 2.0.2
   '@sanity/table':
     specifier: ^2.0.0
     version: 2.0.0(react-dom@18.2.0)(react-is@19.2.3)(react@18.2.0)(sanity@4.22.0)(styled-components@6.1.8)
@@ -4776,11 +4776,6 @@ packages:
       ts-brand: 0.2.0
     dev: false
 
-  /@sanity/image-url@1.0.2:
-    resolution: {integrity: sha512-C4+jb2ny3ZbMgEkLd7Z3C75DsxcTEoE+axXQJsQ75ou0AKWGdVsP351hqK6mJUUxn5HCSlu3vznoh7Yljye4cQ==}
-    engines: {node: '>=10.0.0'}
-    dev: false
-
   /@sanity/image-url@2.0.2:
     resolution: {integrity: sha512-JnwFIHATLXHGVTCKmVwV0xy3xKwGlgVfeUB9cWxu72xJZMsQUyFgGiTz4zD9gRXuncAndkmtzHeIG+2vhKgxHA==}
     engines: {node: '>=20.19.0'}
@@ -5133,7 +5128,7 @@ packages:
       lodash-es: 4.17.22
       reselect: 5.1.1
       rxjs: 7.8.2
-      zustand: 5.0.9(@types/react@19.2.8)(react@18.2.0)(use-sync-external-store@1.6.0)
+      zustand: 5.0.10(@types/react@19.2.8)(react@18.2.0)(use-sync-external-store@1.6.0)
     transitivePeerDependencies:
       - '@types/react'
       - debug
@@ -14272,8 +14267,8 @@ packages:
     resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
     dev: false
 
-  /zustand@5.0.9(@types/react@19.2.8)(react@18.2.0)(use-sync-external-store@1.6.0):
-    resolution: {integrity: sha512-ALBtUj0AfjJt3uNRQoL1tL2tMvj6Gp/6e39dnfT6uzpelGru8v1tPOGBzayOWbPJvujM8JojDk3E1LxeFisBNg==}
+  /zustand@5.0.10(@types/react@19.2.8)(react@18.2.0)(use-sync-external-store@1.6.0):
+    resolution: {integrity: sha512-U1AiltS1O9hSy3rul+Ub82ut2fqIAefiSuwECWt6jlMVUGejvf+5omLcRBSzqbRagSM3hQZbtzdeRc6QVScXTg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
