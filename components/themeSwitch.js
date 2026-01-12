@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
                 name="themeSwitch"
                 value={theme === "system" ? "system" : resolvedTheme}
                 onChange={(e) => setTheme(e.target.value)}
-                className="bg-transparent dark:text-gray-200 text-gray-800"
+                className="bg-custom-broken-white dark:text-gray-200 text-gray-800"
             >
                 <option value="system">System</option>
                 <option value="dark">Dark</option>

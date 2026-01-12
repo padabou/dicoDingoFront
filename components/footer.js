@@ -1,30 +1,70 @@
-import Container from "@/components/container";
 import ThemeSwitch from "@/components/themeSwitch";
-import Link from "next/link";
 
 export default function Footer(props) {
   return (
-    <Container className="mt-10 border-t border-gray-100 dark:border-gray-800">
-      <div className="text-center text-sm">
-        Copyright © {new Date().getFullYear()} {props?.copyright}. All rights reserved. <Link className={"aspect-square"} href={`/mentions-legales`}>Mentions légales</Link> - <Link className={"aspect-square"} href={`/politique-de-confidentialite`}>Politique de confidentialité</Link> - <Link className={"aspect-square"} href={`/about`}>A propos de nous</Link> - <Link className={"aspect-square"} href={`/contact`}>Contactez-nous</Link>
-      </div>
-      <div className="mt-1 flex justify-center gap-1 text-center text-sm text-gray-500 dark:text-gray-600">
-        <span>
-          {" "}
-          Made by{" "}
-          {/*  // ** 🙏  Can I ask you a favor? 🙏 **
-            // Please do not remove the below link.
-           // It helps us to grow & continue our work. Thank you.
-          // OR Purchase PRO version for commercial license.  */}
-          <a
-            href="https://web3templates.com/?ref=stablo-template"
-            rel="noopener"
-            target="_blank">
-            &#x2661;
-          </a>
-        </span>
-        <ThemeSwitch />
-      </div>
-    </Container>
+      <>
+         <footer className="bg-custom-grey mt-12 pt-10 pb-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-8 border-b border-gray-700 pb-8 mb-6">
+              <div>
+                <h4 className="font-bold text-lg mb-3 text-custom-sauge-green">Liens utiles</h4>
+                <ul className="space-y-2 text-sm text-gray-300 list-none">
+                  <li><a href={`/contact`} className="hover:text-custom-blue">Contact</a></li>
+                  <li><a href={`/contribution`} className="hover:text-custom-blue">Contribuer</a></li>
+                  <li><a href={`/about`} className="hover:text-custom-blue">A propos</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-lg mb-3 text-custom-sauge-green">Mentions Légales</h4>
+                <ul className="space-y-2 text-sm text-gray-300 list-none">
+                  <li><a href={`/mentions-legales`} className="hover:text-custom-blue">CGU</a></li>
+                  <li><a href={`/politique-de-confidentialite`} className="hover:text-custom-blue">Politique de Confidentialité</a></li>
+                </ul>
+              </div>
+              {/*
+              <div>
+                <h4 className="font-bold text-lg mb-3 text-custom-sauge-green">Réseaux Sociaux</h4>
+                <div className="flex space-x-3 text-xl">
+                  <a href="#" className="hover:text-custom-blue">📘</a>
+                  <a href="#" className="hover:text-custom-blue">📸</a>
+                  <a href="#" className="hover:text-custom-blue">🐦</a>
+                </div>
+              </div>
+              */}
+            </div>
+
+            <div className="flex justify-between items-center flex-col md:flex-row text-center md:text-left">
+              <p className="text-sm text-gray-400 mb-2 md:mb-0">
+                Copyright &copy; {new Date().getFullYear()} {props?.copyright}. Tous droits réservés
+              </p>
+              <div className="text-xl font-bold flex items-center">
+                <span className="text-2xl mr-1 text-custom-red">🐴</span> ÉQUIDICO
+              </div>
+            </div>
+
+          </div>
+          <div className="mt-1 flex justify-center gap-1 text-center text-sm text-gray-500 dark:text-gray-600">
+            <ThemeSwitch/>
+
+            <span>
+              {" "}
+              Made by{" "}
+              {/*  // ** 🙏  Can I ask you a favor? 🙏 **
+                // Please do not remove the below link.
+               // It helps us to grow & continue our work. Thank you.
+              // OR Purchase PRO version for commercial license.  */}
+              <a
+                  href="https://web3templates.com/?ref=stablo-template"
+                  rel="noopener"
+                  target="_blank">
+                &#x2661;
+              </a>
+            </span>
+
+          </div>
+        </footer>
+
+      </>
   );
 }

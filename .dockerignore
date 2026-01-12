@@ -1,8 +1,61 @@
-nodes_modules/**
-.vscode/**
-.gitignore
-Makefile
-README.md
-docker-compose.yml
-pnpm-lock.yaml
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
 .next
+out
+dist
+build
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+.vscode
+.idea
+
+# Local env files (ne copier que .env.production)
+.env*.local
+.env.development
+.env.test
+.env.sentry-build-plugin
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# CI/CD
+.github
+.gitlab-ci.yml
+
+# Docker
+Dockerfile
+Dockerfile2
+.dockerignore
+docker-compose.yml
+
+# Documentation
+README.md
+CHANGELOG.md
+LICENSE.md
+*.md
+
+# Lockfiles alternatifs
+yarn.lock
+pnpm-lock.yaml
+
+# Config files non nécessaires
+.eslintignore
+.eslintrc
+.prettierrc
+Makefile
