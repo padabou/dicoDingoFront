@@ -24,8 +24,8 @@ dependencies:
     specifier: 3.7.4
     version: 3.7.4(react@18.2.0)
   '@sanity/image-url':
-    specifier: ^2.0.2
-    version: 2.0.2
+    specifier: ^2.0.3
+    version: 2.0.3
   '@sanity/table':
     specifier: ^2.0.0
     version: 2.0.0(react-dom@18.2.0)(react-is@19.2.3)(react@18.2.0)(sanity@4.22.0)(styled-components@6.1.8)
@@ -4821,11 +4821,11 @@ packages:
       ts-brand: 0.2.0
     dev: false
 
-  /@sanity/image-url@2.0.2:
-    resolution: {integrity: sha512-JnwFIHATLXHGVTCKmVwV0xy3xKwGlgVfeUB9cWxu72xJZMsQUyFgGiTz4zD9gRXuncAndkmtzHeIG+2vhKgxHA==}
+  /@sanity/image-url@2.0.3:
+    resolution: {integrity: sha512-A/vOugFw/ROGgSeSGB6nimO0c35x9KztatOPIIVlhkL+zsOfP7khigCbdJup2FSv6C03FX2XaUAhXojCxANl2Q==}
     engines: {node: '>=20.19.0'}
     dependencies:
-      '@sanity/signed-urls': 2.0.1
+      '@sanity/signed-urls': 2.0.2
     dev: false
 
   /@sanity/image-url@2.0.3:
@@ -5189,8 +5189,8 @@ packages:
       - use-sync-external-store
     dev: false
 
-  /@sanity/signed-urls@2.0.1:
-    resolution: {integrity: sha512-/u++FnDbaXDWHiHxG1Q4rbGsKRPf6lmTKsXeZ3bbbty/kNHDhVRUA5mRA+TtXlbPrse4ksv3a2vAerKNUNDZOw==}
+  /@sanity/signed-urls@2.0.2:
+    resolution: {integrity: sha512-w/Aq0JDYI44WC5w8mzJBAjCem8qlGrxGTzvNbUWwBfys6kSL+TZBSypV5waCc35XRgt0X5zdYZMJOrshcjJLFw==}
     dependencies:
       '@noble/ed25519': 3.0.0
       '@noble/hashes': 2.0.1
@@ -11682,6 +11682,12 @@ packages:
         optional: true
     dependencies:
       prettier: 3.8.0
+    dev: false
+
+  /prettier@3.8.0:
+    resolution: {integrity: sha512-yEPsovQfpxYfgWNhCfECjG5AQaO+K3dp6XERmOepyPDVqcJm+bjyCVO3pmU+nAPe0N5dDvekfGezt/EIiRe1TA==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: false
 
   /prettier@3.8.0:
