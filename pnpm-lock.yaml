@@ -78,8 +78,8 @@ dependencies:
     specifier: ^4.1.7
     version: 4.1.7
   html-react-parser:
-    specifier: ^5.2.10
-    version: 5.2.10(@types/react@19.2.8)(react@18.2.0)
+    specifier: ^5.2.11
+    version: 5.2.11(@types/react@19.2.8)(react@18.2.0)
   next:
     specifier: ^16.0.10
     version: 16.0.10(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@18.2.0)(react@18.2.0)
@@ -9493,8 +9493,8 @@ packages:
       void-elements: 3.1.0
     dev: false
 
-  /html-react-parser@5.2.10(@types/react@19.2.8)(react@18.2.0):
-    resolution: {integrity: sha512-DjOLloguuDA+Ed7Q7PKhvMQmCl2+Yk/pfvvca68fvn15QFBbL4uHGxXwoXQ4sqS0UyuRH2lJb0S8yZCL3lvehQ==}
+  /html-react-parser@5.2.11(@types/react@19.2.8)(react@18.2.0):
+    resolution: {integrity: sha512-WnSQVn/D1UTj64nSz5y8MriL+MrbsZH80Ytr1oqKqs8DGZnphWY1R1pl3t7TY3rpqTSu+FHA21P80lrsmrdNBA==}
     peerDependencies:
       '@types/react': 0.14 || 15 || 16 || 17 || 18 || 19
       react: 0.14 || 15 || 16 || 17 || 18 || 19
@@ -11684,6 +11684,12 @@ packages:
         optional: true
     dependencies:
       prettier: 3.8.0
+    dev: false
+
+  /prettier@3.8.0:
+    resolution: {integrity: sha512-yEPsovQfpxYfgWNhCfECjG5AQaO+K3dp6XERmOepyPDVqcJm+bjyCVO3pmU+nAPe0N5dDvekfGezt/EIiRe1TA==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: false
 
   /prettier@3.8.0:

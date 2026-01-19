@@ -34,7 +34,7 @@
     "eslint-config-next": "^16.0.10",
     "eslint-config-sanity": "^7.1.4",
     "get-video-id": "^4.1.7",
-    "html-react-parser": "^5.2.10",
+    "html-react-parser": "^5.2.11",
     "next": "^16.0.10",
     "next-sanity": "^11.6.10",
     "next-seo": "^7.0.1",
