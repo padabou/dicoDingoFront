@@ -52,7 +52,6 @@ LICENSE.md
 
 # Lockfiles alternatifs
 yarn.lock
-pnpm-lock.yaml
 
 # Config files non nécessaires
 .eslintignore
