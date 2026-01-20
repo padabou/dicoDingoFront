@@ -29,15 +29,26 @@ export default function Post(props) {
   return (
     <>
       <Container className="!pt-0">
-        <div className="mx-auto max-w-full ">
+          {imageProps && (
+              <div className="relative z-0 mx-auto aspect-video overflow-hidden lg:rounded-lg">
+                  <Image
+                      src={imageProps}
+                      alt={post?.pictureAlt || "Thumbnail"}
+                      loading="eager"
+                      fill
+                      sizes="100vw"
+                      className="object-cover"
+                  />
+              </div>
+          )}
+        <div className="mx-auto max-w-full mt-4">
           <div className="flex justify-center">
             <CategoryLabel categories={post.categories} />
           </div>
 
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
+          <h1 className="text-brand-primary mt-2 text-center text-3xl font-semibold tracking-tight text-custom-blue dark:text-white lg:text-4xl lg:leading-snug">
             {post.h1Title}
           </h1>
-
           <div className="mt-3 flex justify-center space-x-3 text-gray-500 ">
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 flex-shrink-0">
@@ -69,25 +80,10 @@ export default function Post(props) {
             </div>
           </div>
         </div>
-      </Container>
-
-
-      <Container>
 
         <article className="mx-auto">
           <div className="prose max-w-full mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
-            {imageProps && (
-                <div className="relative z-0 mx-auto aspect-video overflow-hidden lg:rounded-lg">
-                  <Image
-                      src={imageProps}
-                      alt={post?.pictureAlt || "Thumbnail"}
-                      loading="eager"
-                      fill
-                      sizes="100vw"
-                      className="object-cover"
-                  />
-                </div>
-            )}
+
               {post?.intro && (
                   <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600 text-center">
                       {post.intro && ReactHtmlParser(post.intro)}
