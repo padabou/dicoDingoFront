@@ -38,31 +38,32 @@ export default function Footer(props) {
               <p className="text-sm text-gray-30 mb-2 md:mb-0">
                 Copyright &copy; {new Date().getFullYear()} {props?.copyright}. Tous droits réservés
               </p>
+              <div className="mt-1 flex justify-center gap-1 text-center text-sm text-gray-50 dark:text-gray-600">
+                <ThemeSwitch/>
+
+                <span>
+              {" "}
+                  Made by{" "}
+                  {/*  // ** 🙏  Can I ask you a favor? 🙏 **
+                // Please do not remove the below link.
+               // It helps us to grow & continue our work. Thank you.
+              // OR Purchase PRO version for commercial license.  */}
+                  <a
+                      href="https://web3templates.com/?ref=stablo-template"
+                      rel="noopener"
+                      target="_blank">
+                &#x2661;
+              </a>
+            </span>
+
+              </div>
               <div className="text-xl font-bold flex items-center">
                 <span className="text-2xl mr-1 text-custom-red">🐴</span> ÉQUIDICO
               </div>
             </div>
 
           </div>
-          <div className="mt-1 flex justify-center gap-1 text-center text-sm text-gray-50 dark:text-gray-600">
-            <ThemeSwitch/>
 
-            <span>
-              {" "}
-              Made by{" "}
-              {/*  // ** 🙏  Can I ask you a favor? 🙏 **
-                // Please do not remove the below link.
-               // It helps us to grow & continue our work. Thank you.
-              // OR Purchase PRO version for commercial license.  */}
-              <a
-                  href="https://web3templates.com/?ref=stablo-template"
-                  rel="noopener"
-                  target="_blank">
-                &#x2661;
-              </a>
-            </span>
-
-          </div>
         </footer>
 
       </>

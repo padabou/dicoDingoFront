@@ -196,18 +196,14 @@ export default function Post(props) {
 
           </div>
         </article>
-      </Container>
-      <Container className="bg-custom-blue bg-opacity-10">
-          <div className="mb-7 mt-7 flex justify-center">
+          <div className="mb-7 mt-7 flex justify-center bg-custom-blue bg-opacity-10">
             <a
               href="/"
               className="bg-brand-secondary/20 rounded-full px-5 py-2 text-2xl text-custom-broken-white dark:text-custom-broken-white ">
               ← Page d&apos;accueil
             </a>
           </div>
-      </Container>
 
-        <Container>
           {post.author && <AuthorCard author={post.author} />}
           {post?.articleProposal && (
               <>
