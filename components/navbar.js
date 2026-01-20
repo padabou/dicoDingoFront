@@ -81,132 +81,134 @@ export default function Navbar(props) {
   const mobilemenu = [...leftmenu, ...rightmenu];
 
   return (
-      <Container large="true" className="shadow-md py-0 lg:py-1" alt ="true">
-        <nav>
-          <Disclosure>
-            {({open}) => (
-                <>
-                  <div className="flex flex-wrap justify-between md:flex-nowrap md:gap-10">
-                    <div
-                        className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
-                      {leftmenu.map((item, index) => (
-                          <Fragment key={`${item.label}${index}`}>
-                            {item.children && item.children.length > 0 ? (
-                                <DropdownMenu
-                                    menu={item}
-                                    key={`${item.label}${index}`}
-                                    items={item.children}
-                                    className="text-custom-blue"
-                                />
-                            ) : (
-                                <a
-                                    href={item.href}
-                                    key={`${item.label}${index}`}
-                                    className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
-                                    target={item.external ? "_blank" : ""}
-                                    rel={item.external ? "noopener" : ""}>
-                                  {item.label}
-                                </a>
-                            )}
-                          </Fragment>
-                      ))}
-                    </div>
-                    <div className="flex w-full items-center justify-between md:w-auto">
-                      <a href="/" className="w-28 dark:hidden">
-                            <Image
-                                src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}common/logo-equidico-512.png`}
-                                alt="Logo"
-                                priority={true}
-                                sizes="(max-width: 50%) 100vw, 200px"
-                                width={`50`}
-                                height={`50`}
-                            />
-                      </a>
-
-                      <Disclosure.Button
-                          aria-label="Toggle Menu"
-                          className="ml-auto rounded-md px-2 py-1 text-custom-blue focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
-                        <svg
-                            className="h-6 w-6 fill-current"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24">
-                          {open && (
-                              <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+      <>
+        <div large="true" className="shadow-md py-0 lg:py-1 " alt ="true">
+          <nav>
+            <Disclosure>
+              {({open}) => (
+                  <>
+                    <div className="flex flex-wrap justify-between md:flex-nowrap md:gap-10">
+                      <div
+                          className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
+                        {leftmenu.map((item, index) => (
+                            <Fragment key={`${item.label}${index}`}>
+                              {item.children && item.children.length > 0 ? (
+                                  <DropdownMenu
+                                      menu={item}
+                                      key={`${item.label}${index}`}
+                                      items={item.children}
+                                      className="text-custom-blue"
+                                  />
+                              ) : (
+                                  <a
+                                      href={item.href}
+                                      key={`${item.label}${index}`}
+                                      className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
+                                      target={item.external ? "_blank" : ""}
+                                      rel={item.external ? "noopener" : ""}>
+                                    {item.label}
+                                  </a>
+                              )}
+                            </Fragment>
+                        ))}
+                      </div>
+                      <div className="flex w-full items-center justify-between md:w-auto">
+                        <a href="/" className="w-28 dark:hidden">
+                              <Image
+                                  src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}common/logo-equidico-512.png`}
+                                  alt="Logo"
+                                  priority={true}
+                                  sizes="(max-width: 50%) 100vw, 200px"
+                                  width={`50`}
+                                  height={`50`}
                               />
-                          )}
-                          {!open && (
-                              <path
-                                  fillRule="evenodd"
-                                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                              />
-                          )}
-                        </svg>
-                      </Disclosure.Button>
-                    </div>
+                        </a>
 
-                    <div
-                        className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
-                      {rightmenu.map((item, index) => (
-                          <Fragment key={`${item.label}${index}`}>
-                            {item.children && item.children.length > 0 ? (
-                                <DropdownMenu
-                                    menu={item}
-                                    key={`${item.label}${index}`}
-                                    items={item.children}
+                        <Disclosure.Button
+                            aria-label="Toggle Menu"
+                            className="ml-auto rounded-md px-2 py-1 text-custom-blue focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
+                          <svg
+                              className="h-6 w-6 fill-current"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24">
+                            {open && (
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
                                 />
-                            ) : (
-                                <a
-                                    href={item.href}
-                                    key={`${item.label}${index}`}
-                                    className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
-                                    target={item.external ? "_blank" : ""}
-                                    rel={item.external ? "noopener" : ""}>
-                                  <span> {item.label}</span>
-                                  {item.badge && (
-                                      <span
-                                          className="ml-2 rounded text-custom-blue px-2 py-0.5 text-xs font-semibold text-blue-600 dark:bg-cyan-200 dark:text-blue-800 ">
-                                    {item.badge}
-                                  </span>
-                                  )}
-                                </a>
                             )}
-                          </Fragment>
-                      ))}
-                    </div>
-                  </div>
-                  <Disclosure.Panel>
-                    <div className="order-2 -ml-4 mt-4 flex w-full flex-col items-center justify-start md:hidden">
-                      {mobilemenu.map((item, index) => (
-                          <Fragment key={`${item.label}${index}`}>
-                            {item.children && item.children.length > 0 ? (
-                                <DropdownMenu
-                                    menu={item}
-                                    key={`${item.label}${index}`}
-                                    items={item.children}
-                                    mobile={true}
+                            {!open && (
+                                <path
+                                    fillRule="evenodd"
+                                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
                                 />
-                            ) : (
-                                <a
-                                    href={item.href}
-                                    key={`${item.label}${index}`}
-                                    className="w-full px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
-                                    target={item.external ? "_blank" : ""}
-                                    rel={item.external ? "noopener" : ""}>
-                                  {item.label}
-                                </a>
                             )}
-                          </Fragment>
-                      ))}
+                          </svg>
+                        </Disclosure.Button>
+                      </div>
+
+                      <div
+                          className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
+                        {rightmenu.map((item, index) => (
+                            <Fragment key={`${item.label}${index}`}>
+                              {item.children && item.children.length > 0 ? (
+                                  <DropdownMenu
+                                      menu={item}
+                                      key={`${item.label}${index}`}
+                                      items={item.children}
+                                  />
+                              ) : (
+                                  <a
+                                      href={item.href}
+                                      key={`${item.label}${index}`}
+                                      className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
+                                      target={item.external ? "_blank" : ""}
+                                      rel={item.external ? "noopener" : ""}>
+                                    <span> {item.label}</span>
+                                    {item.badge && (
+                                        <span
+                                            className="ml-2 rounded text-custom-blue px-2 py-0.5 text-xs font-semibold text-blue-600 dark:bg-cyan-200 dark:text-blue-800 ">
+                                      {item.badge}
+                                    </span>
+                                    )}
+                                  </a>
+                              )}
+                            </Fragment>
+                        ))}
+                      </div>
                     </div>
-                  </Disclosure.Panel>
-                </>
-            )}
-          </Disclosure>
-        </nav>
-      </Container>
+                    <Disclosure.Panel>
+                      <div className="order-2 -ml-4 mt-4 flex w-full flex-col items-center justify-start md:hidden">
+                        {mobilemenu.map((item, index) => (
+                            <Fragment key={`${item.label}${index}`}>
+                              {item.children && item.children.length > 0 ? (
+                                  <DropdownMenu
+                                      menu={item}
+                                      key={`${item.label}${index}`}
+                                      items={item.children}
+                                      mobile={true}
+                                  />
+                              ) : (
+                                  <a
+                                      href={item.href}
+                                      key={`${item.label}${index}`}
+                                      className="w-full px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
+                                      target={item.external ? "_blank" : ""}
+                                      rel={item.external ? "noopener" : ""}>
+                                    {item.label}
+                                  </a>
+                              )}
+                            </Fragment>
+                        ))}
+                      </div>
+                    </Disclosure.Panel>
+                  </>
+              )}
+            </Disclosure>
+          </nav>
+        </div>
+      </>
   );
 }
 

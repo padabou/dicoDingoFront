@@ -75,11 +75,6 @@ export default function Post(props) {
       <Container>
 
         <article className="mx-auto">
-          {post?.intro && (
-              <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600 text-center">
-                {post.intro && ReactHtmlParser(post.intro)}
-              </div>
-          )}
           <div className="prose max-w-full mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
             {imageProps && (
                 <div className="relative z-0 mx-auto aspect-video overflow-hidden lg:rounded-lg">
@@ -93,6 +88,11 @@ export default function Post(props) {
                   />
                 </div>
             )}
+              {post?.intro && (
+                  <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600 text-center">
+                      {post.intro && ReactHtmlParser(post.intro)}
+                  </div>
+              )}
             {post.content?.map(
                 ({
                    title,
@@ -103,7 +103,7 @@ export default function Post(props) {
                    subContent
                  }) => (
                     <div key={title}>
-                      {title && <h2 id={anchor}>{title}</h2>}
+                      {title && <h2 id={anchor} className="text-custom-red">{title}</h2>}
                       <div
                           key={`text${title}`}
                       >
@@ -131,7 +131,7 @@ export default function Post(props) {
                              subContent
                            }) => (
                               <div key={title}>
-                                {title && <h3 id={anchor}>{title}</h3>}
+                                {title && <h3 id={anchor} className="text-custom-sauge-green">{title}</h3>}
                                 <div
                                     key={`text${title}`}
                                 >
@@ -189,7 +189,7 @@ export default function Post(props) {
 
               {post?.conclusion && (
                   <div>
-                    <h2>
+                    <h2 className="text-custom-sauge-green">
                       Conclusion
                     </h2>
                     <p>
@@ -201,7 +201,7 @@ export default function Post(props) {
           </div>
         </article>
       </Container>
-      <Container className="bg-custom-blue">
+      <Container className="bg-custom-blue bg-opacity-10">
           <div className="mb-7 mt-7 flex justify-center">
             <a
               href="/"
