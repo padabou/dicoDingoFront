@@ -16,7 +16,7 @@ export default function Post({ data }) {
                         <span className="uppercase text-sm font-semibold tracking-widest text-custom-grey">Votre destination</span>
                         <h1 className="text-4xl sm:text-5xl font-extrabold text-[#00539C] my-2">ÉQUIDICO</h1>
                         <p className="text-xl text-custom-grey mt-4">
-                            Votre destination pour tout savoir sur les chevaux, novices et confirmés.
+                            Votre destination complète pour tout savoir sur l'équitation. Que vous soyez débutant ou cavalier confirmé, découvrez nos articles sur les races, le matériel, les métiers équestres et bien plus encore. Apprenez à mieux connaître et prendre soin de votre compagnon à quatre pattes.
                         </p>
                     </div>
 
@@ -32,7 +32,7 @@ export default function Post({ data }) {
                     <div className="grid lg:grid-cols-3 gap-10">
                         <div className="lg:col-span-2 space-y-10">
                             <section>
-                                <h2 className="text-custom-grey text-4xl font-extrabold dark:text-white border-b">
+                                <h2 className="text-custom-blue text-2xl font-extrabold dark:text-white border-b">
                                     Types d'articles </h2>
                                 <div className="grid sm:grid-cols-2 gap-8">
                                     {data?.types?.map(type => (
@@ -41,7 +41,7 @@ export default function Post({ data }) {
                                 </div>
                             </section>
                             <section>
-                                <h2 className="text-custom-grey mb-4 text-4xl font-extrabold dark:text-white border-b">
+                                <h2 className="text-custom-blue mb-4 text-2xl font-extrabold dark:text-white border-b">
                                     Nos derniers articles</h2>
                                 <div className="grid sm:grid-cols-2 gap-8">
 
@@ -56,7 +56,7 @@ export default function Post({ data }) {
                                 </div>
                             </section>
                             <section>
-                                <h2 className="text-custom-grey text-4xl font-extrabold dark:text-white border-b">
+                                <h2 className="text-custom-blue text-2xl font-extrabold dark:text-white border-b">
                                     Vos articles préférés !!</h2>
                                 <div className="grid sm:grid-cols-2 gap-8">
                                     {data?.mostViewed?.map(article => (
@@ -75,7 +75,7 @@ export default function Post({ data }) {
                         </div>
                         <aside className="hidden lg:block lg:col-span-1 space-y-6">
                             <div className="bg-white p-6 rounded-xl shadow-lg sticky top-20">
-                                <h3 className="text-xl font-bold text-custom-grey mb-4 border-b pb-2">Le Blog !</h3>
+                                <h3 className="text-xl font-bold text-custom-blue mb-4 border-b pb-2">Le Blog !</h3>
                                 {data?.blogArticles?.map(article => (
                                     <PostAside post={article} key={article.slug}/>
                                 ))}

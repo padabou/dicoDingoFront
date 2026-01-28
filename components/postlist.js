@@ -53,39 +53,35 @@ export default function PostList({
           )}
           </a>
           <div className={cx("p-5")}>
-            <h3 className={cx("text-xl font-semibold text-custom-blue mb-2")}>
-
-                <a href={articleHref}>
-                <span
-                    className="text-custom-red hover:text-custom-sauge-green bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
+            <h3 className={cx("text-xl font-semibold  mb-2")}>
+                <a href={articleHref}
+                    className={`text-custom-red hover:text-custom-sauge-green from-green-200 to-green-100 bg-size-[0px_10px] bg-bottom-left
                     bg-no-repeat
                     transition-[background-size]
                     duration-500
-                    hover:bg-[length:100%_3px]
-                    group-hover:bg-[length:100%_10px]
-                    dark:from-purple-800 dark:to-purple-900">
+                    hover:bg-size-[100%_3px]
+                    group-hover:bg-size-[100%_10px]
+                    dark:from-purple-800 dark:to-purple-900
+                    ${isCategory ? "block w-full text-center" : ""}`
+                    }>
                   {article.title}
-                </span>
                 </a>
             </h3>
 
               {!isCategory && article?.intro && (
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-[6]">
-                      {article.intro && ReactHtmlParser(article.intro)} ...
-                    </p>
-                    )}
-            <a href={articleHref}>
-            <span
-                className="text-custom-red hover:text-custom-sauge-green bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
-                            bg-no-repeat
-                            transition-[background-size]
-                            duration-500
-                            hover:bg-[length:100%_3px]
-                            group-hover:bg-[length:100%_10px]
-                            dark:from-purple-800 dark:to-purple-900">
-                        Voir plus !
-                      </span>
-            </a>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-[6]">
+                  {article.intro && ReactHtmlParser(article.intro)} ...
+                </p>
+              )}
+                {!isCategory && (
+                  <p className="px-20">
+                      <a href={articleHref}
+                        className="bg-custom-blue text-white px-6 py-2 rounded-full font-semibold hover:bg-custom-sauge-green transition-all duration-500 hover:scale-105
+                                    block w-full text-center">
+                                Voir plus !
+                    </a>
+                  </p>
+              )}
             {(article?.publishedAt || article.createdAt) &&
                 <div className={cx("flex items-center justify-between mt-4 text-gray-500 dark:text-gray-400")}>
                   <time
