@@ -12,6 +12,9 @@ export default function Category({ type, category }) {
   return (
     <>
         <Container>
+        <h1 className="text-brand-primary mt-2  text-3xl font-semibold tracking-tight text-custom-blue dark:text-white lg:text-4xl lg:leading-snug">
+            {type?.title}
+        </h1>
         {type?.intro && (
             <div className={'mt-5 text-custom-grey'}>
                 {type.intro && ReactHtmlParser(type.intro)}
@@ -24,7 +27,7 @@ export default function Category({ type, category }) {
       {type?.articles?.articles && (
         <Container>
 
-          <div className="mt-10 grid gap-16 md:grid-cols-2 lg:gap-10 xl:grid-cols-2 ">
+          <div className="mt-10 grid gap-16 md:grid-cols-2 lg:gap-10 xl:grid-cols-4 ">
             {type?.articles?.articles.map(article => (
               <PostList key={article.slug} article={article} aspect="square" />
             ))}

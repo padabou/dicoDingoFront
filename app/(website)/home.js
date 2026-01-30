@@ -34,7 +34,7 @@ export default function Post({ data }) {
                             <section>
                                 <h2 className="text-custom-blue text-2xl font-extrabold dark:text-white border-b">
                                     Types d'articles </h2>
-                                <div className="grid sm:grid-cols-2 gap-8">
+                                <div className="grid sm:grid-cols-3 gap-8">
                                     {data?.types?.map(type => (
                                         <PostList key={type.slug} article={type} aspect="landscape" isCategory={true}/>
                                     ))}
@@ -43,7 +43,7 @@ export default function Post({ data }) {
                             <section>
                                 <h2 className="text-custom-blue mb-4 text-2xl font-extrabold dark:text-white border-b">
                                     Nos derniers articles</h2>
-                                <div className="grid sm:grid-cols-2 gap-8">
+                                <div className="grid sm:grid-cols-3 gap-8">
 
                                     {data?.lastArticles?.map(article => (
                                         <PostList
@@ -58,7 +58,7 @@ export default function Post({ data }) {
                             <section>
                                 <h2 className="text-custom-blue text-2xl font-extrabold dark:text-white border-b">
                                     Vos articles préférés !!</h2>
-                                <div className="grid sm:grid-cols-2 gap-8">
+                                <div className="grid sm:grid-cols-3 gap-8">
                                     {data?.mostViewed?.map(article => (
                                         <PostList key={article.slug} article={article} aspect="landscape"/>
                                     ))}

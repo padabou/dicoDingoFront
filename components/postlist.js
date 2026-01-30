@@ -74,7 +74,7 @@ export default function PostList({
                 </p>
               )}
                 {!isCategory && (
-                  <p className="px-20">
+                  <p>
                       <a href={articleHref}
                         className="bg-custom-blue text-white px-6 py-2 rounded-full font-semibold hover:bg-custom-sauge-green transition-all duration-500 hover:scale-105
                                     block w-full text-center">
