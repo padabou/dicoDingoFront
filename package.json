@@ -21,7 +21,7 @@
     "@sanity/table": "^2.0.0",
     "@sanity/types": "^5.2.0",
     "@sanity/ui": "^3.1.11",
-    "@sanity/vision": "^4.22.0",
+    "@sanity/vision": "^5.7.0",
     "@sentry/nextjs": "^10.36.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
