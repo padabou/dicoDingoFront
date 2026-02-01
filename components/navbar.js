@@ -33,7 +33,7 @@ export default function Navbar(props) {
         },
         {
           title: "Les Disciplines",
-          href: "/article/discipline"
+          path: "/article/discipline"
         }
       ]
     },
