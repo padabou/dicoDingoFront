@@ -212,7 +212,7 @@ export default function Post(props) {
                     D&apos;autres pages qui pourraient vous intéresser !
                   </h2>
                 </div>
-                <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
+                <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-4 ">
                   {post?.articleProposal?.map(article => (
                       <PostList key={article.slug} article={article} aspect="square"/>
                   ))}
