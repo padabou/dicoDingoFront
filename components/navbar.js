@@ -87,41 +87,17 @@ export default function Navbar(props) {
             <Disclosure>
               {({open}) => (
                   <>
-                    <div className="flex flex-wrap justify-between md:flex-nowrap md:gap-10">
-                      <div
-                          className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
-                        {leftmenu.map((item, index) => (
-                            <Fragment key={`${item.label}${index}`}>
-                              {item.children && item.children.length > 0 ? (
-                                  <DropdownMenu
-                                      menu={item}
-                                      key={`${item.label}${index}`}
-                                      items={item.children}
-                                      className="text-custom-blue"
-                                  />
-                              ) : (
-                                  <a
-                                      href={item.href}
-                                      key={`${item.label}${index}`}
-                                      className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
-                                      target={item.external ? "_blank" : ""}
-                                      rel={item.external ? "noopener" : ""}>
-                                    {item.label}
-                                  </a>
-                              )}
-                            </Fragment>
-                        ))}
-                      </div>
+                    <div className="flex flex-wrap justify-center md:flex-nowrap md:gap-10">
                       <div className="flex w-full items-center justify-between md:w-auto">
                         <a href="/" className="w-28 dark:hidden">
-                              <Image
-                                  src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}common/logo-equidico-512.png`}
-                                  alt="Logo"
-                                  priority={true}
-                                  sizes="(max-width: 50%) 100vw, 200px"
-                                  width={`50`}
-                                  height={`50`}
-                              />
+                          <Image
+                              src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}common/logo-equidico-512.png`}
+                              alt="Logo"
+                              priority={true}
+                              sizes="(max-width: 50%) 100vw, 200px"
+                              width={`50`}
+                              height={`50`}
+                          />
                         </a>
 
                         <Disclosure.Button
@@ -147,9 +123,29 @@ export default function Navbar(props) {
                           </svg>
                         </Disclosure.Button>
                       </div>
-
                       <div
-                          className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
+                          className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-row md:justify-end">
+                        {leftmenu.map((item, index) => (
+                            <Fragment key={`${item.label}${index}`}>
+                              {item.children && item.children.length > 0 ? (
+                                  <DropdownMenu
+                                      menu={item}
+                                      key={`${item.label}${index}`}
+                                      items={item.children}
+                                      className="text-custom-blue"
+                                  />
+                              ) : (
+                                  <a
+                                      href={item.href}
+                                      key={`${item.label}${index}`}
+                                      className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
+                                      target={item.external ? "_blank" : ""}
+                                      rel={item.external ? "noopener" : ""}>
+                                    {item.label}
+                                  </a>
+                              )}
+                            </Fragment>
+                        ))}
                         {rightmenu.map((item, index) => (
                             <Fragment key={`${item.label}${index}`}>
                               {item.children && item.children.length > 0 ? (
