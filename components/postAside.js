@@ -16,7 +16,7 @@ export default function PostAside({
   const imageSrc = post?.picture
       ? post?.picture
       : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
-  const articleHref = `/article/${post?.type ? `${post.type.toLowerCase().replace("_", "-")}/` : ""}${post.slug}`;
+  const articleHref = `/article/${post?.type ? `${post?.type?.toLowerCase().replace("_", "-")}/` : ""}${post?.slug}`;
 
 
   return (

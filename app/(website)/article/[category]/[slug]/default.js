@@ -26,6 +26,11 @@ export default function Post(props) {
   const AuthorimageProps = post?.author?.image
     ? urlForImage(post.author.image)
     : null;
+
+  const readingTime = post.readingTime;
+
+  const isNumeric = !isNaN(readingTime) && readingTime !== null && readingTime !== "";
+
   return (
     <>
       <Container className="!pt-0">
@@ -74,7 +79,9 @@ export default function Post(props) {
                       "dd/MM/yyyy"
                     )}
                   </time>
-                  <span>· {post.estReadingTime || "5"} min de lecture</span>
+                  <span>· {isNumeric
+                      ? `${Number(readingTime)} min de lecture`
+                      : readingTime || "5 min de lecture"}</span>
                 </div>
               </div>
             </div>
