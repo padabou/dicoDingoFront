@@ -93,8 +93,8 @@ importers:
         specifier: ^11.6.10
         version: 11.6.12(@emotion/is-prop-valid@1.4.0)(@sanity/client@7.14.0)(@sanity/icons@3.7.4(react@18.3.1))(@sanity/types@5.4.0(@types/react@19.2.10))(next@16.1.6(@babel/core@7.28.6)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react-is@19.2.4)(react@18.3.1)(sanity@5.7.0(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.0.1)(@swc/helpers@0.5.18)(@types/node@25.2.3)(@types/react@19.2.10)(babel-plugin-react-compiler@1.0.0)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.3.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(vitest@3.2.4(@types/node@25.2.3)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(yaml@2.8.2))(styled-components@6.3.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.9.3)
       next-seo:
-        specifier: ^7.1.0
-        version: 7.1.0(next@16.1.6(@babel/core@7.28.6)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        specifier: ^7.2.0
+        version: 7.2.0(next@16.1.6(@babel/core@7.28.6)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5659,8 +5659,8 @@ packages:
       sanity: ^4.22.0
       styled-components: ^6.1
 
-  next-seo@7.1.0:
-    resolution: {integrity: sha512-gTWm9wnAXvtqD8QPIpbBA6iMnqMp1WyNTGza9QJPabVIPoX+ZDt1/J0KUkziiIKRyad+nSGLC0BfHgekqcfq0Q==}
+  next-seo@7.2.0:
+    resolution: {integrity: sha512-ST7/YB8g0SXGuEKNucBz9wiP6nCYVZ4v8qJB7rAz9Vr1X98mw5orWL9COr8td/dzqtCYd4xaIg0YVCq5Yy3PQA==}
     peerDependencies:
       next: '>=13.4.0'
       react: '>=18.2.0'
@@ -13873,7 +13873,7 @@ snapshots:
       - svelte
       - typescript
 
-  next-seo@7.1.0(next@16.1.6(@babel/core@7.28.6)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
+  next-seo@7.2.0(next@16.1.6(@babel/core@7.28.6)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
     dependencies:
       next: 16.1.6(@babel/core@7.28.6)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
