@@ -54,7 +54,7 @@
     "sanity": "^5.16.0",
     "server-only-context": "^0.1.0",
     "sharp": "^0.34.5",
-    "styled-components": "^6.3.11",
+    "styled-components": "^6.3.12",
     "swr": "^2.4.1",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"
