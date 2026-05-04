@@ -70,7 +70,7 @@ export default function PostList({
 
               {!isCategory && article?.intro && (
                 <p className="text-gray-600 text-sm mb-4 line-clamp-[6]">
-                  {article.intro && ReactHtmlParser(article.intro)} ...
+                  {article?.intro && ReactHtmlParser(article.intro)} ...
                 </p>
               )}
                 {!isCategory && (
@@ -134,7 +134,7 @@ export default function PostList({
             {article?.intro && (
                 <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600 ">
                   <p className="line-clamp-[6]">
-                    {article.intro && ReactHtmlParser(article.intro)} ...
+                    {article?.intro && ReactHtmlParser(article.intro)} ...
                   </p>
                   <p>
                     <a href={articleHref}>
