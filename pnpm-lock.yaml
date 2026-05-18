@@ -84,8 +84,8 @@ importers:
         specifier: ^4.1.7
         version: 4.1.7
       html-react-parser:
-        specifier: ^6.0.1
-        version: 6.0.1(@types/react@19.2.14)(react@18.3.1)
+        specifier: ^6.1.0
+        version: 6.1.0(@types/react@19.2.14)(react@18.3.1)
       next:
         specifier: ^16.2.4
         version: 16.2.4(@babel/core@7.29.0)(@opentelemetry/api@1.9.1)(babel-plugin-react-compiler@1.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4984,8 +4984,8 @@ packages:
   hotscript@1.0.13:
     resolution: {integrity: sha512-C++tTF1GqkGYecL+2S1wJTfoH6APGAsbb7PAWQ3iVIwgG/EFseAfEVOKFgAFq4yK3+6j1EjUD4UQ9dRJHX/sSQ==}
 
-  html-dom-parser@7.0.1:
-    resolution: {integrity: sha512-loRBDTCY/05/jAC63J1X9ID+xjRucmpLkIcQO0IRbOubBo5ucnpUpyXXob9UMXOskMZlu7KPsDP/2KOMelzJNA==}
+  html-dom-parser@7.1.0:
+    resolution: {integrity: sha512-83BgaFSW/Sj6QTotGenvPvKfGxFzpFfrJNYes77mzqnq+YjVm12d4qeG0+108w4ejnam/+nCnnLuyyJlXkuPtA==}
 
   html-encoding-sniffer@4.0.0:
     resolution: {integrity: sha512-Y22oTqIU4uuPgEemfz7NDJz6OeKf12Lsu+QC+s3BVpda64lTiMYCyGwg5ki4vFxkMwQdeZDl2adZoqUgdFuTgQ==}
@@ -4998,8 +4998,8 @@ packages:
   html-parse-stringify@3.0.1:
     resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
 
-  html-react-parser@6.0.1:
-    resolution: {integrity: sha512-tIie2HSIk2Ct1tdupjd/DhBjskxN/NL5J4ncbUnk2smBr5UIfpPpitUo0imGfBM0BlOL7ac8RcqEwne1jXTcsQ==}
+  html-react-parser@6.1.0:
+    resolution: {integrity: sha512-FoFY2aZrSAMcPPhUmb4R87gwfhwvYT6luJIQ++Xl9qm2x/4IDGjf+B2F+wcdrhMVOe/o44Nq7IEbvsKfq6fq+Q==}
     peerDependencies:
       '@types/react': 0.14 || 15 || 16 || 17 || 18 || 19
       react: 0.14 || 15 || 16 || 17 || 18 || 19
@@ -13279,7 +13279,7 @@ snapshots:
 
   hotscript@1.0.13: {}
 
-  html-dom-parser@7.0.1:
+  html-dom-parser@7.1.0:
     dependencies:
       domhandler: 6.0.1
       htmlparser2: 12.0.0
@@ -13298,10 +13298,10 @@ snapshots:
     dependencies:
       void-elements: 3.1.0
 
-  html-react-parser@6.0.1(@types/react@19.2.14)(react@18.3.1):
+  html-react-parser@6.1.0(@types/react@19.2.14)(react@18.3.1):
     dependencies:
       domhandler: 6.0.1
-      html-dom-parser: 7.0.1
+      html-dom-parser: 7.1.0
       react: 18.3.1
       react-property: 2.0.2
       style-to-js: 1.1.21
