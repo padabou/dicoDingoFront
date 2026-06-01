@@ -81,8 +81,8 @@ importers:
         specifier: ^7.1.4
         version: 7.1.4(@typescript-eslint/eslint-plugin@8.56.1(@typescript-eslint/parser@8.56.1(eslint@9.39.2(jiti@2.7.0))(typescript@5.9.3))(eslint@9.39.2(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/parser@8.56.1(eslint@9.39.2(jiti@2.7.0))(typescript@5.9.3))(eslint-plugin-import@2.32.0)(eslint-plugin-react@7.37.5(eslint@9.39.2(jiti@2.7.0)))(eslint@9.39.2(jiti@2.7.0))
       get-video-id:
-        specifier: ^4.1.7
-        version: 4.1.7
+        specifier: ^4.2.0
+        version: 4.2.0
       html-react-parser:
         specifier: ^6.1.0
         version: 6.1.0(@types/react@19.2.14)(react@18.3.1)
@@ -5042,9 +5042,9 @@ packages:
   get-tsconfig@4.14.0:
     resolution: {integrity: sha512-yTb+8DXzDREzgvYmh6s9vHsSVCHeC0G3PI5bEXNBHtmshPnO+S5O7qgLEOn0I5QvMy6kpZN8K1NKGyilLb93wA==}
 
-  get-video-id@4.1.7:
-    resolution: {integrity: sha512-bYHXe3BTbFbiViuNFyfFnZPnSDVWBu5N06p35LW7dD/ul4O1sdPSs3Brw8U/m5JlQUnkj3tht3luSz0k05vEYg==}
-    engines: {node: '>=16'}
+  get-video-id@4.2.0:
+    resolution: {integrity: sha512-jRGMts6wFqruMF85oEHY0aLqdn9Eo/AL/VVEwxJk8SWY5nNJDOK4fj1WUPO9/+CnhexZh2l3sZ4S+qGIJJJ8YA==}
+    engines: {node: ^20.19.0 || >=22.0.0}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -13395,9 +13395,7 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  get-video-id@4.1.7:
-    dependencies:
-      '@babel/runtime': 7.28.6
+  get-video-id@4.2.0: {}
 
   glob-parent@5.1.2:
     dependencies:
