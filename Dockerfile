@@ -13,8 +13,8 @@ WORKDIR /app
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 
-# Autoriser pnpm à exécuter les scripts de build des dépendances (sharp, esbuild, etc.)
-ENV PNPM_FLAGS="--allow-builds"
+# Le bon flag officiel pour pnpm récent afin d'autoriser les scripts de build
+ENV PNPM_FLAGS="--dangerously-allow-all-builds"
 
 # Installer les dépendances de production
 RUN pnpm install --frozen-lockfile --prod $PNPM_FLAGS
@@ -36,8 +36,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
-# Réassignation des flags pour cette étape de build complète
-ENV PNPM_FLAGS="--allow-builds"
+ENV PNPM_FLAGS="--dangerously-allow-all-builds"
 
 # Installer TOUTES les dépendances (dev inclus) pour le build
 RUN pnpm install --frozen-lockfile $PNPM_FLAGS
