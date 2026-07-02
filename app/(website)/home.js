@@ -2,6 +2,8 @@ import Container from "@/components/container";
 import PostList from "@/components/postlist";
 import React from "react";
 import PostAside from "@/components/postAside.js";
+import AdBanner from "@/components/AdBanner";
+import { AD_SLOTS } from "@/lib/adsense";
 
 export default function Post({ data }) {
 
@@ -26,6 +28,8 @@ export default function Post({ data }) {
                     </div>
                 </div>
             </section>
+
+            <AdBanner slot={AD_SLOTS.banner} format="horizontal" className="mb-10 md:mb-12" />
 
             {data && (
                 <>
@@ -55,6 +59,7 @@ export default function Post({ data }) {
                                     ))}
                                 </div>
                             </section>
+                            <AdBanner slot={AD_SLOTS.banner} format="horizontal" className="lg:hidden" />
                             <section>
                                 <h2 className="text-custom-blue text-2xl font-extrabold dark:text-white border-b">
                                     Vos articles préférés !!</h2>
@@ -74,11 +79,14 @@ export default function Post({ data }) {
 
                         </div>
                         <aside className="hidden lg:block lg:col-span-1 space-y-6">
-                            <div className="bg-white p-6 rounded-xl shadow-lg sticky top-20">
+                            <div className="sticky top-20 space-y-6">
+                            <AdBanner slot={AD_SLOTS.sidebar} format="sidebar" />
+                            <div className="bg-white p-6 rounded-xl shadow-lg">
                                 <h3 className="text-xl font-bold text-custom-blue mb-4 border-b pb-2">Le Blog !</h3>
                                 {data?.blogArticles?.map(article => (
                                     <PostAside post={article} key={article.slug}/>
                                 ))}
+                            </div>
                             </div>
                         </aside>
                     </div>

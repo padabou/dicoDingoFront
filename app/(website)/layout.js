@@ -1,6 +1,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Searchbar from "@/components/searchbar";
+import AdSenseScript from "@/components/AdSenseScript";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 async function sharedMetaData(params) {
@@ -53,6 +54,7 @@ export default async function Layout({ children, params }) {
   return (
     <>
       <GoogleAnalytics gaId={googleAnalyticsId}/>
+      <AdSenseScript />
       <Navbar {...settings} />
       <Searchbar />
 

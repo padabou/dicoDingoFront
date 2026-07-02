@@ -1,5 +1,7 @@
 import Container from "@/components/container";
 import PostList from "@/components/postlist";
+import AdBanner from "@/components/AdBanner";
+import { AD_SLOTS } from "@/lib/adsense";
 
 export default function Article({ types }) {
   return (
@@ -12,6 +14,7 @@ export default function Article({ types }) {
               <PostList key={type.slug} article={type} aspect="square" />
             ))}
           </div>
+          <AdBanner slot={AD_SLOTS.banner} format="horizontal" className="mt-10" />
           <div className="mt-10 flex justify-center">
             <a
               href="/"

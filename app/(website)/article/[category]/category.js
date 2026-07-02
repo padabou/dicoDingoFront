@@ -1,6 +1,9 @@
 import Container from "@/components/container";
 import PostList from "@/components/postlist";
 import ArticlePagination from "@/components/ArticlePagination";
+import AdBanner from "@/components/AdBanner";
+import { AD_SLOTS } from "@/lib/adsense";
+import React from "react";
 import ReactHtmlParser from "html-react-parser";
 import { notFound } from "next/navigation";
 
@@ -21,6 +24,9 @@ export default function Category({ type, category }) {
             </div>
         )}
         </Container>
+        <Container>
+          <AdBanner slot={AD_SLOTS.banner} format="horizontal" className="mt-6" />
+        </Container>
         {type?.articles?.totalPages > 1 && (
             <ArticlePagination articles={type.articles} url={`/article/${category}?page=`} />
         )}
@@ -28,8 +34,17 @@ export default function Category({ type, category }) {
         <Container>
 
           <div className="mt-10 grid gap-16 md:grid-cols-2 lg:gap-10 xl:grid-cols-4 ">
-            {type?.articles?.articles.map(article => (
-              <PostList key={article.slug} article={article} aspect="square" />
+            {type?.articles?.articles.map((article, index) => (
+              <React.Fragment key={article.slug}>
+                <PostList article={article} aspect="square" />
+                {index === 3 && (
+                  <AdBanner
+                    slot={AD_SLOTS.inFeed}
+                    format="in-feed"
+                    wrapped
+                  />
+                )}
+              </React.Fragment>
             ))}
           </div>
 

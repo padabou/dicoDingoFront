@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import Container from "@/components/container";
 import { notFound } from "next/navigation";
 import ReactHtmlParser from "html-react-parser";
 import { urlForImage } from "@/lib/sanity/image";
 import { parseISO, format } from "date-fns";
+import AdBanner from "@/components/AdBanner";
+import { AD_SLOTS } from "@/lib/adsense";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
@@ -96,16 +99,23 @@ export default function Post(props) {
                       {post.intro && ReactHtmlParser(post.intro)}
                   </div>
               )}
+
+            <AdBanner slot={AD_SLOTS.inArticle} format="in-article" className="my-6" />
+
             {post.content?.map(
-                ({
+                (
+                   {
                    title,
                    anchor,
                    text,
                    picture,
                    picture_alt,
                    subContent
-                 }) => (
-                    <div key={title}>
+                 },
+                 index
+               ) => (
+                    <React.Fragment key={title}>
+                    <div>
                       {title && <h2 id={anchor} className="text-custom-red">{title}</h2>}
                       <div
                           key={`text${title}`}
@@ -187,6 +197,14 @@ export default function Post(props) {
                           )
                       )}
                     </div>
+                    {index === 1 && (
+                      <AdBanner
+                        slot={AD_SLOTS.inArticle}
+                        format="in-article"
+                        className="my-8"
+                      />
+                    )}
+                    </React.Fragment>
                 )
             )}
 
@@ -200,6 +218,8 @@ export default function Post(props) {
                     </p>
                   </div>
               )}
+
+            <AdBanner slot={AD_SLOTS.banner} format="horizontal" className="my-8" />
 
           </div>
         </article>
