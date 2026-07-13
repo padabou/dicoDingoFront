@@ -18,8 +18,8 @@ importers:
         specifier: ^16.2.10
         version: 16.2.10(next@16.2.10(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react@19.2.6)
       '@portabletext/react':
-        specifier: ^6.0.3
-        version: 6.0.3(react@19.2.6)
+        specifier: ^6.2.0
+        version: 6.2.0(react@19.2.6)
       '@sanity/client':
         specifier: ^7.20.0
         version: 7.22.0
@@ -2414,12 +2414,6 @@ packages:
     peerDependencies:
       '@portabletext/editor': ^6.6.4
       react: ^19.2
-
-  '@portabletext/react@6.0.3':
-    resolution: {integrity: sha512-xkpykEYKdyR8DJq1oTGKhmwQMqIta8OEHAEMq1EQ5kGOdnVU4ZzU6c+1EZNgyNFpSZs/25ee3kA4Te9ybbQCyA==}
-    engines: {node: '>=20.19 <22 || >=22.12'}
-    peerDependencies:
-      react: ^18.2 || ^19
 
   '@portabletext/react@6.2.0':
     resolution: {integrity: sha512-Z0J/AWrvg7GyDfEBQRRhi6ZpxLOsN4/QbU8KhTwfa6r2ELiRaMa4gkHE9wfs3V1ozNDrTG4IRr+8yBnHNDnAqA==}
@@ -10298,12 +10292,6 @@ snapshots:
       react: 19.2.6
     transitivePeerDependencies:
       - '@types/react'
-
-  '@portabletext/react@6.0.3(react@19.2.6)':
-    dependencies:
-      '@portabletext/toolkit': 5.0.2
-      '@portabletext/types': 4.0.2
-      react: 19.2.6
 
   '@portabletext/react@6.2.0(react@19.2.6)':
     dependencies:
