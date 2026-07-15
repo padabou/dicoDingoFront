@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { cx } from "@/utils/all";
-import { isAdSlotConfigured } from "@/lib/adsense";
+import { IN_FEED_LAYOUT_KEY, isAdSlotConfigured } from "@/lib/adsense";
 
 const FORMAT_STYLES = {
   horizontal: "min-h-[90px] w-full max-w-[728px]",
@@ -16,7 +16,7 @@ const AD_FORMAT_ATTR = {
   horizontal: "auto",
   rectangle: "auto",
   sidebar: "auto",
-  "in-feed": "auto",
+  "in-feed": "fluid",
   "in-article": "auto"
 };
 
@@ -67,7 +67,10 @@ export default function AdBanner({
         data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}
         data-ad-slot={slot}
         data-ad-format={AD_FORMAT_ATTR[format] ?? "auto"}
-        data-full-width-responsive="true"
+        {...(format === "in-feed" && IN_FEED_LAYOUT_KEY
+          ? { "data-ad-layout-key": IN_FEED_LAYOUT_KEY }
+          : {})}
+        {...(format !== "in-feed" ? { "data-full-width-responsive": "true" } : {})}
       />
     </aside>
   );

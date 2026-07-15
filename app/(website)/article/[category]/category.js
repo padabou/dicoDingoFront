@@ -2,7 +2,7 @@ import Container from "@/components/container";
 import PostList from "@/components/postlist";
 import ArticlePagination from "@/components/ArticlePagination";
 import AdBanner from "@/components/AdBanner";
-import { AD_SLOTS } from "@/lib/adsense";
+import { AD_SLOTS, IN_FEED_ENABLED } from "@/lib/adsense";
 import React from "react";
 import ReactHtmlParser from "html-react-parser";
 import { notFound } from "next/navigation";
@@ -37,7 +37,7 @@ export default function Category({ type, category }) {
             {type?.articles?.articles.map((article, index) => (
               <React.Fragment key={article.slug}>
                 <PostList article={article} aspect="square" />
-                {index === 3 && (
+                {index === 3 && IN_FEED_ENABLED && (
                   <AdBanner
                     slot={AD_SLOTS.inFeed}
                     format="in-feed"
