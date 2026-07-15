@@ -16,7 +16,7 @@ const AD_FORMAT_ATTR = {
   horizontal: "auto",
   rectangle: "auto",
   sidebar: "auto",
-  "in-feed": "fluid",
+  "in-feed": "auto",
   "in-article": "auto"
 };
 
