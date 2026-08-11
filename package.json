@@ -21,7 +21,7 @@
     "@sanity/code-input": "^6.0.4",
     "@sanity/icons": "3.7.4",
     "@sanity/image-url": "^2.1.1",
-    "@sanity/table": "^2.0.1",
+    "@sanity/table": "^3.1.6",
     "@sanity/types": "^5.28.0",
     "@sanity/ui": "^3.1.11",
     "@sanity/vision": "^4.22.0",
