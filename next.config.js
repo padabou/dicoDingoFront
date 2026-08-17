@@ -3,6 +3,11 @@ import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
+  experimental: {
+      outputFileTracingIncludes: {
+          '/*': ['./node_modules/@swc/helpers/**/*'],
+      },
+  },
   poweredByHeader: false,
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
