@@ -54,8 +54,8 @@ importers:
         specifier: ^0.5.20
         version: 0.5.20(tailwindcss@4.3.0)
       '@vercel/og':
-        specifier: ^0.11.1
-        version: 0.11.1
+        specifier: ^1.0.1
+        version: 1.0.1(@types/node@25.9.1)
       '@web3forms/react':
         specifier: ^1.1.3
         version: 1.1.3(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -2652,8 +2652,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
-  '@resvg/resvg-wasm@2.4.0':
-    resolution: {integrity: sha512-C7c51Nn4yTxXFKvgh2txJFNweaVcfUPQxwEUFw4aWsCmfiBDJsTSwviIF8EcwjQ6k8bPyMWCl1vw4BdxE569Cg==}
+  '@resvg/resvg-wasm@2.4.1':
+    resolution: {integrity: sha512-yi6R0HyHtsoWTRA06Col4WoDs7SvlXU3DLMNP2bdAgs7HK18dTEVl1weXgxRzi8gwLteGUbIg29zulxIB3GSdg==}
     engines: {node: '>= 10'}
 
   '@rexxars/react-json-inspector@9.0.1':
@@ -3951,9 +3951,9 @@ packages:
   '@vercel/frameworks@3.21.1':
     resolution: {integrity: sha512-N8ciri8NSz4vlc8Dqfa9cr1rn2RRbmG3T8Q+8/QM/4af4d1UbSdBG8cBBo7jQSQfNobjURRGL/miGBe+dS2wOQ==}
 
-  '@vercel/og@0.11.1':
-    resolution: {integrity: sha512-02rXXRABFq1B03w3aNhcVfxkY+8Ba5QFi4ax0zS0oOiD/LL9WUd/LA7BjVPakrQmVhIBjuo2oBM5U25R9IuXMg==}
-    engines: {node: '>=16'}
+  '@vercel/og@1.0.1':
+    resolution: {integrity: sha512-uLTgu6ZIYuPuDnPpwkYhJsOjogqIhMnjjLREFpRAXjsMpCIQ2RmNX8Iz/5shDXfva1A2V0kC5j+KFVUSc4TVew==}
+    engines: {node: '>=22'}
 
   '@vercel/stega@1.1.0':
     resolution: {integrity: sha512-DFOm3Gk78nKDkppQEG5aj8Wj8R8hPKu/xrz4Rtp0AfiaNbZNCoJbxn7VI6iMxqhGeLdUDy/8mTuTWMz/izAtPA==}
@@ -5111,8 +5111,8 @@ packages:
       picomatch:
         optional: true
 
-  fflate@0.7.4:
-    resolution: {integrity: sha512-5u2V/CDW15QM1XbbgS+0DfPxVB+jUKhWEKuuFuHncbk3tEEqzmoXL+2KyOFuKGqOnmdIy0/davWF1CkuwtibCw==}
+  fflate@0.7.5:
+    resolution: {integrity: sha512-QieYf//cis6ywHNi5qW1+PXPQ4bC+XVJAtS4AXIML8P76GroEiOxm/oQtn1f02UkJY1+KsXMJcC+R2v/Eg4G3g==}
 
   figures@6.1.0:
     resolution: {integrity: sha512-d+l3qxjSesT4V7v2fh+QnmFnUWv9lSpjarhShNTgBOfA0ttejbQUAlHLitbjkoRiDulW0OPoQPYIGhIC8ohejg==}
@@ -6988,8 +6988,8 @@ packages:
       react-dom: ^19.2.2
       styled-components: ^6.1.15
 
-  satori@0.25.0:
-    resolution: {integrity: sha512-utINfLxrYrmSnLvxFT4ZwgwWa8KOjrz7ans32V5wItgHVmzESl/9i33nE38uG0miycab8hUqQtDlOpqrIpB/iw==}
+  satori@0.29.0:
+    resolution: {integrity: sha512-fPAfrwNaIQ7EsJLhY382STEqpczN6ZEH9NsKXDQgRcxUXNNPB73iAjSshzFwTaaScT68pxV0pmG6TBzDQ4sEGw==}
     engines: {node: '>=16'}
 
   saxes@6.0.0:
@@ -10599,7 +10599,7 @@ snapshots:
     dependencies:
       react: 19.2.6
 
-  '@resvg/resvg-wasm@2.4.0': {}
+  '@resvg/resvg-wasm@2.4.1': {}
 
   '@rexxars/react-json-inspector@9.0.1(react@19.2.6)':
     dependencies:
@@ -11695,7 +11695,7 @@ snapshots:
 
   '@shuding/opentype.js@1.4.0-beta.0':
     dependencies:
-      fflate: 0.7.4
+      fflate: 0.7.5
       string.prototype.codepointat: 0.2.1
 
   '@sindresorhus/merge-streams@4.0.0': {}
@@ -12118,12 +12118,14 @@ snapshots:
       '@vercel/error-utils': 2.0.3
       js-yaml: 3.13.1
 
-  '@vercel/og@0.11.1':
+  '@vercel/og@1.0.1(@types/node@25.9.1)':
     dependencies:
-      '@resvg/resvg-wasm': 2.4.0
-      satori: 0.25.0
+      '@resvg/resvg-wasm': 2.4.1
+      satori: 0.29.0
     optionalDependencies:
-      sharp: 0.34.5
+      sharp: 0.35.3(@types/node@25.9.1)
+    transitivePeerDependencies:
+      - '@types/node'
 
   '@vercel/stega@1.1.0': {}
 
@@ -13497,7 +13499,7 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.4
 
-  fflate@0.7.4: {}
+  fflate@0.7.5: {}
 
   figures@6.1.0:
     dependencies:
@@ -15499,7 +15501,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  satori@0.25.0:
+  satori@0.29.0:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
