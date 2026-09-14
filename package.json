@@ -23,7 +23,7 @@
     "@sanity/image-url": "^2.1.1",
     "@sanity/table": "^3.1.6",
     "@sanity/types": "^6.10.1",
-    "@sanity/ui": "^3.5.2",
+    "@sanity/ui": "^4.2.1",
     "@sanity/vision": "^4.22.0",
     "@sentry/nextjs": "^10.74.0",
     "@tailwindcss/postcss": "^4.3.3",
