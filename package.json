@@ -46,7 +46,7 @@
     "postcss": "^8.5.26",
     "postcss-cli": "^11.0.0",
     "prettier": "^3.9.6",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.85.0",
