@@ -120,8 +120,8 @@ importers:
         specifier: ^7.85.0
         version: 7.85.0(react@19.2.6)
       react-iframe:
-        specifier: ^1.8.5
-        version: 1.8.5(react@19.2.6)
+        specifier: ^2.0.1
+        version: 2.0.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-refractor:
         specifier: ^4.0.0
         version: 4.0.0(react@19.2.6)
@@ -6376,10 +6376,12 @@ packages:
       typescript:
         optional: true
 
-  react-iframe@1.8.5:
-    resolution: {integrity: sha512-F4cQJGs3ydaG6fJWfuz9yLwOU0Trzl6kttXuUG+vYwosH8enOOFxZWEDQCSbNVO8ayjfYZeqLxEvdvcsSy4GvA==}
+  react-iframe@2.0.1:
+    resolution: {integrity: sha512-JIgixxKYAF9whk+Ofva4xIJZ+5bFqpvd/RbLcUrXzQjb+Jsuv/HzHe0Y0RVnz7m/eFxJPka/hovu+3NyhnX4Gg==}
+    engines: {node: '>=20'}
     peerDependencies:
-      react: '>=16.x.x'
+      react: '>=18'
+      react-dom: '>=18'
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -14382,10 +14384,10 @@ snapshots:
       react-dom: 19.2.6(react@19.2.6)
       typescript: 5.9.3
 
-  react-iframe@1.8.5(react@19.2.6):
+  react-iframe@2.0.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
-      object-assign: 4.1.1
       react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
 
   react-is@16.13.1: {}
 
