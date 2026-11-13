@@ -15,7 +15,8 @@ const nextConfig = {
   images: {
     unoptimized: false,
     formats: ["image/avif", "image/webp"],
-    dangerouslyAllowSVG: true,
+    // SVG via /_next/image expands RCE surface (librsvg); serve .svg statically instead
+    dangerouslyAllowSVG: false,
     remotePatterns: [
       {
         protocol: "https",
@@ -47,6 +48,6 @@ export default withSentryConfig(
       project: "equidico-frontend",
       silent: !process.env.CI,
       widenClientFileUpload: true,
-      tunnelRoute: "/monitoring",
+      // No tunnelRoute: avoids Sentry middleware-skip gap (GHSA-mchm-gjx6-7h55)
     }
 );
