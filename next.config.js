@@ -13,7 +13,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
-    unoptimized: true,
+    unoptimized: false,
     formats: ["image/avif", "image/webp"],
     dangerouslyAllowSVG: true,
     remotePatterns: [
@@ -21,6 +21,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "equidico.fr",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.equidico.fr",
         port: "",
       },
     ],

@@ -8,6 +8,12 @@ export default function Article({ types }) {
     <>
       {types && (
         <Container>
+          <h1 className="text-brand-primary mt-2 mb-3 text-center text-3xl font-semibold tracking-tight lg:text-4xl lg:leading-snug dark:text-white">
+            Sommaire des catégories
+          </h1>
+          <p className="mb-8 text-center text-lg text-gray-700 dark:text-gray-300">
+            Disciplines, races, matériel et plus - choisissez une catégorie pour explorer.
+          </p>
 
           <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
             {types.map(type => (

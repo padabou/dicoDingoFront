@@ -14,12 +14,16 @@ export default function SearchPage({ articles, search }) {
           Vous avez demandé les pages qui concernent : &quot;{search}&quot;
         </div>
 
-        {articles?.articles && (
+        {articles?.articles?.length > 0 ? (
         <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
-          {articles?.articles.map(article => (
+          {articles.articles.map(article => (
               <PostList key={article.slug} article={article} aspect="square"/>
           ))}
         </div>
+        ) : (
+          <p className="mt-10 text-center text-lg text-gray-700 dark:text-gray-300">
+            Aucun résultat pour cette recherche. Essayez un autre mot-clé ou parcourez les catégories.
+          </p>
         )}
 
         <div className="mt-10 flex justify-center">

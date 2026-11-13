@@ -48,4 +48,4 @@ export default async function Categories({ params }) {
   );
 }
 
-// export const revalidate = 60;
+export const revalidate = 3600;

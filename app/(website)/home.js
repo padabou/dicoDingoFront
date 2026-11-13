@@ -23,7 +23,9 @@ export default function Post({ data }) {
                     </div>
 
                     <div className="hidden md:block relative h-full">
-                        <img src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}${image.url}`} alt={image.alt}
+                        <img
+                             src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}${image.url}`}
+                             alt={image.alt || "Illustration ÉQUIDICO - monde équestre"}
                              className="w-full h-full object-cover rounded-md shadow-2xl"/>
                     </div>
                 </div>

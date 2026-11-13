@@ -33,12 +33,36 @@ export default function AdBanner({
   useEffect(() => {
     if (!isAdSlotConfigured(slot) || pushedRef.current) return;
 
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-      pushedRef.current = true;
-    } catch (error) {
-      console.error("AdSense:", error);
+    const el = insRef.current;
+    if (!el) return;
+
+    const pushAd = () => {
+      if (pushedRef.current) return;
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        pushedRef.current = true;
+      } catch (error) {
+        console.error("AdSense:", error);
+      }
+    };
+
+    if (typeof IntersectionObserver === "undefined") {
+      pushAd();
+      return;
     }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          pushAd();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px", threshold: 0.01 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [slot]);
 
   if (!isAdSlotConfigured(slot)) {
@@ -56,7 +80,7 @@ export default function AdBanner({
       )}
     >
       {label && (
-        <span className="mb-1 text-xs uppercase tracking-wide text-gray-400">
+        <span className="mb-1 text-xs uppercase tracking-wide text-gray-500">
           Publicité
         </span>
       )}

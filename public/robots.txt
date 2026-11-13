@@ -1,9 +1,4 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://equidico.fr
-
-# Sitemaps
-Sitemap: https://equidico.fr/api/sitemap.xml
+Sitemap: https://equidico.fr/sitemap.xml

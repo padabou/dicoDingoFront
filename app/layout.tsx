@@ -14,7 +14,6 @@ const lora = Lora({
   subsets: ["latin"],
   variable: "--font-lora"
 });
-export const dynamic = "force-dynamic";
 export default function RootLayout({
   children
 }: {
@@ -28,7 +27,7 @@ export default function RootLayout({
               inter.variable,
               lora.variable,
               // IMPORTANT : les styles de thème doivent être ici
-              "bg-white text-gray-800 dark:bg-black dark:text-gray-400"
+              "bg-white text-gray-800 dark:bg-black dark:text-gray-300"
           )}
       >
       <body className="antialiased">
