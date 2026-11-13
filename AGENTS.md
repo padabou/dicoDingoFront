@@ -29,7 +29,8 @@ Public site for **equidico.fr**: horse encyclopedia (races, coats, disciplines, 
 
 ## Content model
 
-Articles typed by string codes (`RACE`, `DISCIPLINE`, …) mapped to URL categories (`race`, `discipline`, …). Nav hardcoded in `components/navbar.js`.
+Articles typed by string codes (`RACE`, `DISCIPLINE`, …) mapped to URL categories (`race`, `discipline`, …).
+Nav/footer built from `GET /types` via `lib/navLinks.js` (`buildNavbarMenus` / `buildExploreLinks`). Group labels in `NAV_GROUPS`; unknown types appear as top-level links. Fallback list if API empty.
 
 ## SEO / perf pitfalls
 

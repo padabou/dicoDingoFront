@@ -12,9 +12,12 @@ import { AD_SLOTS } from "@/lib/adsense";
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 import PostList from "@/components/postlist";
+import SocialShare from "@/components/SocialShare";
+import ArticleToc from "@/components/ArticleToc";
+import BackToTop from "@/components/BackToTop";
 
 export default function Post(props) {
-  const { loading, post } = props;
+  const { loading, post, category, categoryLabel, shareUrl } = props;
 
   const slug = post?.slug;
 
@@ -33,9 +36,12 @@ export default function Post(props) {
   const readingTime = post.readingTime;
 
   const isNumeric = !isNaN(readingTime) && readingTime !== null && readingTime !== "";
+  const categoryHref = category ? `/article/${category}` : "/article";
+  const categoryBackLabel = categoryLabel || "la catégorie";
 
   return (
     <>
+      <BackToTop />
       <Container className="!pt-0">
           {imageProps && (
               <div className="relative z-0 mx-auto aspect-video overflow-hidden lg:rounded-lg">
@@ -61,15 +67,13 @@ export default function Post(props) {
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 flex-shrink-0">
                 {AuthorimageProps && post.author && (
-                  <Link href={`/author/${post.author.slug.current}`}>
-                    <Image
-                      src={AuthorimageProps.src}
-                      alt={post?.author?.name}
-                      className="rounded-full object-cover"
-                      fill
-                      sizes="40px"
-                    />
-                  </Link>
+                  <Image
+                    src={AuthorimageProps.src}
+                    alt={post?.author?.name || "Auteur"}
+                    className="rounded-full object-cover"
+                    fill
+                    sizes="40px"
+                  />
                 )}
               </div>
               <div>
@@ -89,6 +93,11 @@ export default function Post(props) {
               </div>
             </div>
           </div>
+          <SocialShare
+            url={shareUrl}
+            title={post?.h1Title || post?.title}
+            className="mt-5"
+          />
         </div>
 
         <article className="mx-auto">
@@ -99,6 +108,8 @@ export default function Post(props) {
                       {post.intro && ReactHtmlParser(post.intro)}
                   </div>
               )}
+
+            <ArticleToc sections={post.content} />
 
             <AdBanner slot={AD_SLOTS.inArticle} format="in-article" className="my-6" />
 
@@ -219,16 +230,22 @@ export default function Post(props) {
                   </div>
               )}
 
+            <SocialShare
+              url={shareUrl}
+              title={post?.h1Title || post?.title}
+              className="my-8 not-prose"
+            />
+
             <AdBanner slot={AD_SLOTS.banner} format="horizontal" className="my-8" />
 
           </div>
         </article>
-          <div className="mb-7 mt-7 flex justify-center bg-custom-blue bg-opacity-10">
-            <a
-              href="/"
-              className="bg-brand-secondary/20 rounded-full px-5 py-2 text-2xl text-custom-broken-white dark:text-custom-broken-white ">
-              ← Page d&apos;accueil
-            </a>
+          <div className="mb-7 mt-7 flex justify-center">
+            <Link
+              href={categoryHref}
+              className="rounded-full bg-custom-blue px-5 py-2 text-lg font-medium text-white hover:bg-custom-blue/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-blue focus-visible:ring-offset-2">
+              ← Retour à {categoryBackLabel}
+            </Link>
           </div>
 
           {post.author && <AuthorCard author={post.author} />}

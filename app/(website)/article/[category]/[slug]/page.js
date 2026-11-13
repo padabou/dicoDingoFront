@@ -139,7 +139,12 @@ export default async function PostDefault({ params }) {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <Breadcrumb />
-            <PostPage post={post} />
+            <PostPage
+              post={post}
+              category={category.replace("_", "-")}
+              categoryLabel={post?.typeLabel}
+              shareUrl={articleUrl}
+            />
         </section>
     );
 }

@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar";
 import Searchbar from "@/components/searchbar";
 import AdSenseScript from "@/components/AdSenseScript";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { getAllTypes } from "@/lib/type/client";
 
 async function sharedMetaData(params) {
   const settings = [];//await getSettings();
@@ -62,7 +63,7 @@ const organizationJsonLd = {
 };
 
 export default async function Layout({ children, params }) {
-  const settings = [];//await getSettings();
+  const types = await getAllTypes();
   const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID;
   return (
     <>
@@ -72,12 +73,12 @@ export default async function Layout({ children, params }) {
       />
       {googleAnalyticsId ? <GoogleAnalytics gaId={googleAnalyticsId}/> : null}
       <AdSenseScript />
-      <Navbar {...settings} />
+      <Navbar types={types} />
       <Searchbar />
 
       <div>{children}</div>
 
-      <Footer {...settings} />
+      <Footer types={types} />
     </>
   );
 }

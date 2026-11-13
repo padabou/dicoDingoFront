@@ -2,82 +2,13 @@
 
 import { Fragment } from "react";
 import { Menu, Transition, Disclosure } from "@headlessui/react";
-import Container from "@/components/container";
 import Image from "next/image";
-import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { myLoader } from "@/utils/all";
+import { buildNavbarMenus } from "@/lib/navLinks";
 
-export default function Navbar(props) {
-  const leftmenu = [
-    {
-      label: "Accueil",
-      href: "/"
-    },
-    {
-      label: "Le cheval",
-      href: "/article/robe",
-      children: [
-        {
-          title: "Les Robes",
-          path: "/article/robe"
-        },
-        {
-          title: "Les Races",
-          path: "/article/race"
-        },
-        {
-          title: "Son quotidien",
-          path: "/article/cheval-quotidien"
-        },
-        {
-          title: "Les Disciplines",
-          path: "/article/discipline"
-        }
-      ]
-    },
-    {
-      label: "Le Matériel",
-      href: "/article/materiel-cheval",
-      children: [
-        {
-          title: "Le matériel du cheval",
-          path: "/article/materiel-cheval"
-        },
-        {
-          title: "Le matériel du cavalier",
-          path: "/article/materiel-cavalier"
-        }
-      ]
-    },
-    {
-      label: "Les métiers",
-      href: "/article/metier"
-    }
-
-  ];
-
-  const rightmenu = [
-
-   /* {
-      label: "Métier",
-      href: "/article/metier"
-    },*/
-    {
-      label: "Le Blog",
-      href: "/article/blog"
-    },
-    {
-      label: "Anecdote",
-      href: "/article/anecdote"
-    },
-    {
-      label: "Contribuer",
-      href: "/contribution"
-    }
-  ];
-
+export default function Navbar({ types }) {
+  const { leftmenu, rightmenu } = buildNavbarMenus(types);
   const mobilemenu = [...leftmenu, ...rightmenu];
 
   return (
@@ -92,7 +23,7 @@ export default function Navbar(props) {
                         <a href="/" className="w-28 dark:hidden">
                           <Image
                               src={`${process.env.NEXT_PUBLIC_PICTURE_PATH}common/logo-equidico-512.png`}
-                              alt="Logo"
+                              alt="Logo ÉQUIDICO"
                               priority={true}
                               sizes="(max-width: 50%) 100vw, 200px"
                               width={`50`}
@@ -101,7 +32,7 @@ export default function Navbar(props) {
                         </a>
 
                         <Disclosure.Button
-                            aria-label="Toggle Menu"
+                            aria-label="Ouvrir le menu"
                             className="ml-auto rounded-md px-2 py-1 text-custom-blue focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
                           <svg
                               className="h-6 w-6 fill-current"
@@ -130,17 +61,14 @@ export default function Navbar(props) {
                               {item.children && item.children.length > 0 ? (
                                   <DropdownMenu
                                       menu={item}
-                                      key={`${item.label}${index}`}
                                       items={item.children}
-                                      className="text-custom-blue"
                                   />
                               ) : (
                                   <a
                                       href={item.href}
-                                      key={`${item.label}${index}`}
                                       className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
-                                      target={item.external ? "_blank" : ""}
-                                      rel={item.external ? "noopener" : ""}>
+                                      target={item.external ? "_blank" : undefined}
+                                      rel={item.external ? "noopener" : undefined}>
                                     {item.label}
                                   </a>
                               )}
@@ -151,23 +79,15 @@ export default function Navbar(props) {
                               {item.children && item.children.length > 0 ? (
                                   <DropdownMenu
                                       menu={item}
-                                      key={`${item.label}${index}`}
                                       items={item.children}
                                   />
                               ) : (
                                   <a
                                       href={item.href}
-                                      key={`${item.label}${index}`}
                                       className="px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
-                                      target={item.external ? "_blank" : ""}
-                                      rel={item.external ? "noopener" : ""}>
-                                    <span> {item.label}</span>
-                                    {item.badge && (
-                                        <span
-                                            className="ml-2 rounded text-custom-blue px-2 py-0.5 text-xs font-semibold text-blue-600 dark:bg-cyan-200 dark:text-blue-800 ">
-                                      {item.badge}
-                                    </span>
-                                    )}
+                                      target={item.external ? "_blank" : undefined}
+                                      rel={item.external ? "noopener" : undefined}>
+                                    <span>{item.label}</span>
                                   </a>
                               )}
                             </Fragment>
@@ -181,17 +101,15 @@ export default function Navbar(props) {
                               {item.children && item.children.length > 0 ? (
                                   <DropdownMenu
                                       menu={item}
-                                      key={`${item.label}${index}`}
                                       items={item.children}
                                       mobile={true}
                                   />
                               ) : (
                                   <a
                                       href={item.href}
-                                      key={`${item.label}${index}`}
                                       className="w-full px-5 py-2 text-sm font-medium text-custom-blue hover:text-custom-red dark:text-gray-400"
-                                      target={item.external ? "_blank" : ""}
-                                      rel={item.external ? "noopener" : ""}>
+                                      target={item.external ? "_blank" : undefined}
+                                      rel={item.external ? "noopener" : undefined}>
                                     {item.label}
                                   </a>
                               )}
@@ -251,7 +169,7 @@ const DropdownMenu = ({menu, items, mobile}) => {
                             ? "text-blue-500"
                             : "text-custom-red hover:text-custom-blue focus:text-blue-500 dark:text-gray-300"
                         )}>
-                        <span> {item.title}</span>
+                        <span>{item.title}</span>
                       </a>
                     )}
                   </Menu.Item>

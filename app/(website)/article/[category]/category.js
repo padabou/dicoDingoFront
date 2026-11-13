@@ -54,11 +54,16 @@ export default function Category({ type, category }) {
             <ArticlePagination articles={type?.articles}  url={`/article/${category}?page=`} />
         )}
         <Container>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <a
+              href="/article"
+              className="relative inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-blue dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300">
+            <span>← Toutes les catégories</span>
+          </a>
           <a
               href="/"
-              className="relative inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 disabled:pointer-events-none disabled:opacity-40 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300">
-            <span>Retour à l&apos;accueil</span>
+              className="relative inline-flex items-center gap-1 rounded-md border border-transparent px-3 py-2 text-sm font-medium text-gray-500 hover:text-custom-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-custom-blue dark:text-gray-400">
+            <span>Accueil</span>
           </a>
         </div>
       </Container>
