@@ -6,20 +6,20 @@ export default function Footer(props) {
          <footer className="bg-custom-sauge-green mt-12 pt-10 pb-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
 
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-8 border-b border-gray-700 pb-8 mb-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-8 border-b border-white/30 pb-8 mb-6">
               <div>
-                <h4 className="font-bold text-lg mb-3 text-custom-blue">Liens utiles</h4>
-                <ul className="space-y-2 text-sm text-gray-30 list-none">
-                  <li><a href={`/contact`} className="hover:text-custom-red font-medium">Contact</a></li>
-                  <li><a href={`/contribution`} className="hover:text-custom-red font-medium">Contribuer</a></li>
-                  <li><a href={`/about`} className="hover:text-custom-red font-medium">A propos</a></li>
+                <h4 className="font-bold text-lg mb-3 text-custom-clear-blue">Liens utiles</h4>
+                <ul className="space-y-2 text-sm text-white list-none">
+                  <li><a href={`/contact`} className="font-medium text-white underline-offset-2 hover:underline hover:text-custom-broken-white">Contact</a></li>
+                  <li><a href={`/contribution`} className="font-medium text-white underline-offset-2 hover:underline hover:text-custom-broken-white">Contribuer</a></li>
+                  <li><a href={`/about`} className="font-medium text-white underline-offset-2 hover:underline hover:text-custom-broken-white">A propos</a></li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold text-lg mb-3 text-custom-blue">Mentions Légales</h4>
-                <ul className="space-y-2 text-sm text-gray-50 list-none">
-                  <li><a href={`/mentions-legales`} className="hover:text-custom-red font-medium">CGU</a></li>
-                  <li><a href={`/politique-de-confidentialite`} className="hover:text-custom-red font-medium">Politique de Confidentialité</a></li>
+                <h4 className="font-bold text-lg mb-3 text-custom-clear-blue">Mentions Légales</h4>
+                <ul className="space-y-2 text-sm text-white list-none">
+                  <li><a href={`/mentions-legales`} className="font-medium text-white underline-offset-2 hover:underline hover:text-custom-broken-white">CGU</a></li>
+                  <li><a href={`/politique-de-confidentialite`} className="font-medium text-white underline-offset-2 hover:underline hover:text-custom-broken-white">Politique de Confidentialité</a></li>
                 </ul>
               </div>
               {/*
@@ -35,10 +35,10 @@ export default function Footer(props) {
             </div>
 
             <div className="flex justify-between items-center flex-col md:flex-row text-center md:text-left">
-              <p className="text-sm text-gray-30 mb-2 md:mb-0 font-medium">
-                Copyright &copy; {new Date().getFullYear()} {props?.copyright}. Tous droits réservés
+              <p className="text-sm text-white mb-2 md:mb-0 font-medium">
+                Copyright &copy; {new Date().getFullYear()} {props?.copyright || "ÉQUIDICO"}. Tous droits réservés
               </p>
-              <div className="mt-1 flex justify-center gap-1 text-center text-sm text-gray-50 dark:text-gray-600">
+              <div className="mt-1 flex justify-center gap-1 text-center text-sm text-white">
                 <ThemeSwitch/>
 
                 <span>
@@ -51,7 +51,8 @@ export default function Footer(props) {
                   <a
                       href="https://web3templates.com/?ref=stablo-template"
                       rel="noopener"
-                      target="_blank">
+                      target="_blank"
+                      className="text-white hover:underline">
                 &#x2661;
               </a>
             </span>

@@ -6,4 +6,4 @@ export default async function IndexPage({searchParams}) {
   return <HomePage data={data}/>;
 }
 
-// export const revalidate = 60;
+export const revalidate = 3600;

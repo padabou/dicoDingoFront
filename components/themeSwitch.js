@@ -14,9 +14,12 @@ export default function ThemeSwitch() {
 
     return (
         <div className="inline-flex items-center">
-            <SunIcon className="w-4 h-4 mr-2" />
-
+            <SunIcon className="w-4 h-4 mr-2" aria-hidden="true" />
+            <label htmlFor="themeSwitch" className="sr-only">
+                Thème d&apos;affichage
+            </label>
             <select
+                id="themeSwitch"
                 name="themeSwitch"
                 value={theme === "system" ? "system" : resolvedTheme}
                 onChange={(e) => setTheme(e.target.value)}

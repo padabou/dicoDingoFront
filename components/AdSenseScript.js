@@ -9,6 +9,7 @@ export default function AdSenseScript() {
   return (
     <Script
       async
+      id="adsense-loader"
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
       crossOrigin="anonymous"
       strategy="lazyOnload"

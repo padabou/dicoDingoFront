@@ -5,7 +5,13 @@ import Loading from "@/components/loading";
 
 export const dynamic = "force-dynamic";
 
-export const runtime = "edge";
+export async function generateMetadata() {
+  return {
+    title: "Archive",
+    robots: { index: false, follow: false },
+    alternates: { canonical: "/archive" }
+  };
+}
 
 export default async function ArchivePage({ searchParams }) {
   const { page } = await searchParams;
