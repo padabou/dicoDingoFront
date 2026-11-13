@@ -10,8 +10,7 @@ export async function generateMetadata() {
 }
 
 export default async function ContactPage() {
-  const settings = [];//await getSettings();
-  return <Contact settings={settings} />;
+  return <Contact />;
 }
 
 export const revalidate = 3600;

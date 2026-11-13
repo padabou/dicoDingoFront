@@ -5,19 +5,14 @@ import AdSenseScript from "@/components/AdSenseScript";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { getAllTypes } from "@/lib/type/client";
 
-async function sharedMetaData(params) {
-  const settings = [];//await getSettings();
+async function sharedMetaData() {
   return {
-    // enable this for resolving opengraph image
     metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://equidico.fr"),
     title: {
-      default:
-        settings?.title ||
-        "ÉQUIDICO, le dictionnaire qui dit tout sur les chevaux",
+      default: "ÉQUIDICO, le dictionnaire qui dit tout sur les chevaux",
       template: "%s | ÉQUIDICO"
     },
     description:
-      settings?.description ||
       "On vous renseigne, on vous enseigne, on vous informe ! Races, disciplines, matériel et métiers équestres.",
     keywords: ["Equitation", "Monde équestre", "Cheval", "Race cheval", "Discipline équestre"],
     authors: [{ name: "Florent de l'Hamaide" }],
@@ -38,7 +33,7 @@ async function sharedMetaData(params) {
       ]
     },
     twitter: {
-      title: settings?.title || "ÉQUIDICO",
+      title: "ÉQUIDICO",
       card: "summary_large_image"
     },
     robots: {
@@ -48,8 +43,8 @@ async function sharedMetaData(params) {
   };
 }
 
-export async function generateMetadata({ params }) {
-  return await sharedMetaData(params);
+export async function generateMetadata() {
+  return await sharedMetaData();
 }
 
 const organizationJsonLd = {

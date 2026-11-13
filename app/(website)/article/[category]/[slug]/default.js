@@ -4,7 +4,7 @@ import React from "react";
 import Container from "@/components/container";
 import { notFound } from "next/navigation";
 import ReactHtmlParser from "html-react-parser";
-import { urlForImage } from "@/lib/sanity/image";
+import { resolveImageUrl } from "@/lib/image";
 import { parseISO, format } from "date-fns";
 import AdBanner from "@/components/AdBanner";
 import { AD_SLOTS } from "@/lib/adsense";
@@ -29,9 +29,7 @@ export default function Post(props) {
       ? post?.picture
       : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
 
-  const AuthorimageProps = post?.author?.image
-    ? urlForImage(post.author.image)
-    : null;
+  const authorImageSrc = resolveImageUrl(post?.author?.image);
 
   const readingTime = post.readingTime;
 
@@ -66,9 +64,9 @@ export default function Post(props) {
           <div className="mt-3 flex justify-center space-x-3 text-gray-500 ">
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 flex-shrink-0">
-                {AuthorimageProps && post.author && (
+                {authorImageSrc && post.author && (
                   <Image
-                    src={AuthorimageProps.src}
+                    src={authorImageSrc}
                     alt={post?.author?.name || "Auteur"}
                     className="rounded-full object-cover"
                     fill
@@ -267,18 +265,3 @@ export default function Post(props) {
     </>
   );
 }
-
-const MainImage = ({image}) => {
-  return (
-    <div className="mb-12 mt-12 ">
-      <Image {...urlForImage(image)} alt={image.alt || "Thumbnail"} />
-      <figcaption className="text-center ">
-        {image.caption && (
-          <span className="text-sm italic text-gray-600 dark:text-gray-400">
-            {image.caption}
-          </span>
-        )}
-      </figcaption>
-    </div>
-  );
-};

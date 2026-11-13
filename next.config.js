@@ -17,7 +17,6 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     dangerouslyAllowSVG: true,
     remotePatterns: [
-      { hostname: "cdn.sanity.io" },
       {
         protocol: "https",
         hostname: "equidico.fr",

@@ -1,6 +1,6 @@
 import Container from "@/components/container";
 
-export default function Contribution({ settings }) {
+export default function Contribution() {
 
   return (
       <Container>

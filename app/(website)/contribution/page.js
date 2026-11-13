@@ -10,8 +10,7 @@ export async function generateMetadata() {
 }
 
 export default async function ContributionPage() {
-  const settings = [];//await getSettings();
-  return <Contribution settings={settings} />;
+  return <Contribution />;
 }
 
 export const revalidate = 3600;

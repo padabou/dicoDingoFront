@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { cx } from "@/utils/all";
-import { urlForImage } from "@/lib/sanity/image";
+import { resolveImageUrl } from "@/lib/image";
 import { parseISO, format } from "date-fns";
 import { PhotoIcon } from "@heroicons/react/24/outline";
 import CategoryLabel from "@/components/blog/category";
@@ -19,9 +19,7 @@ export default function PostList({
   const imageSrc = article?.picture
     ? article?.picture
     : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
-  const AuthorimageProps = article?.author?.image
-    ? urlForImage(article.author.image)
-    : `${process.env.NEXT_PUBLIC_PICTURE_PATH}${process.env.NEXT_PUBLIC_DEFAULT_PICTURE}`;
+  const authorImageSrc = resolveImageUrl(article?.author?.image);
   const articleHref = `/article/${article?.type ? `${article?.type?.toLowerCase().replace("_", "-")}/` : ""}${article?.slug}`;
   return (
       <>
@@ -198,13 +196,12 @@ export default function PostList({
               </div>
               <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
                 {article?.author &&
-                    <a href={`/author/${article?.author?.slug?.current}`}>
                       <div className="flex items-center gap-3">
                         <div className="relative h-5 w-5 flex-shrink-0">
-                          {article?.author?.image && (
+                          {authorImageSrc && (
                               <Image
-                                  src={AuthorimageProps.src}
-                                  alt={article?.author?.name}
+                                  src={authorImageSrc}
+                                  alt={article?.author?.name || "Auteur"}
                                   className="rounded-full object-cover"
                                   fill
                                   sizes="20px"
@@ -215,7 +212,6 @@ export default function PostList({
                       {article?.author?.name}
                     </span>
                       </div>
-                    </a>
                 }
 
                 {(article?.publishedAt || article.createdAt) &&

@@ -15,7 +15,7 @@ Public site for **equidico.fr**: horse encyclopedia (races, coats, disciplines, 
 
 - Next.js 16, React 19, Tailwind 4, pnpm
 - Content: **Java API** via `NEXT_API_URL` (`lib/article`, `lib/type`, `lib/home`)
-- Sanity packages/schemas under `lib/sanity` = **legacy unused** (no studio route)
+- Images: `lib/image.js` (`resolveImageUrl`) - no Sanity
 - AdSense + GA4; Sentry
 - Brand tokens: `styles/tailwind.css`
 

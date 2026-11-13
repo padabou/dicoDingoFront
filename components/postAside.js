@@ -1,10 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
 import { cx } from "@/utils/all";
-import { urlForImage } from "@/lib/sanity/image";
 import { parseISO, format } from "date-fns";
-import { PhotoIcon } from "@heroicons/react/24/outline";
-import CategoryLabel from "@/components/blog/category";
 import React from "react";
 
 export default function PostAside({
